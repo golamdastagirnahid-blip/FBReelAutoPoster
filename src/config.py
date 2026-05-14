@@ -44,6 +44,11 @@ class Config:
     hashtags_file: str
     titles_file: str
 
+    # Video enhance
+    filter_style: str          # one of: random|natural|vivid|sunset|cinematic|cool|warm
+    watermark_text: str        # "" disables; e.g. "Ethan Wilder"
+    watermark_font_file: str   # "" -> OS default
+
     # Behaviour
     dry_run: bool
 
@@ -69,5 +74,8 @@ def load_config() -> Config:
         hashtags_per_post_max=int(_opt("HASHTAGS_PER_POST_MAX", "12")),
         hashtags_file=_opt("HASHTAGS_FILE", "hashtags.txt"),
         titles_file=_opt("TITLES_FILE", "titles.txt"),
+        filter_style=_opt("FILTER_STYLE", "random"),
+        watermark_text=_opt("WATERMARK_TEXT", ""),
+        watermark_font_file=_opt("WATERMARK_FONT_FILE", ""),
         dry_run=_opt("DRY_RUN", "false").lower() in ("1", "true", "yes"),
     )

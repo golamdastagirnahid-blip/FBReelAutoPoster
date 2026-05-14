@@ -48,6 +48,8 @@ jobs:
       HASHTAGS_PER_POST_MAX: ${{ vars.HASHTAGS_PER_POST_MAX || '12' }}
       HASHTAGS_FILE: ${{ vars.HASHTAGS_FILE || 'hashtags.txt' }}
       TITLES_FILE: ${{ vars.TITLES_FILE || 'titles.txt' }}
+      FILTER_STYLE:   ${{ vars.FILTER_STYLE || 'random' }}
+      WATERMARK_TEXT: ${{ vars.WATERMARK_TEXT || 'Ethan Wilder' }}
       DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
       # FORCE_POST: skip scheduler & post immediately. Only set on manual runs.
       FORCE_POST: ${{ github.event_name == 'workflow_dispatch' && inputs.force_post && 'true' || 'false' }}

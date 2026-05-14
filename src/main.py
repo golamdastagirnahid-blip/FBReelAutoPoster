@@ -131,7 +131,12 @@ def run() -> int:
               f"(hashtag_pool={len(pool)} title_pool={len(title_pool)})")
 
         enhanced = os.path.join(tmp, "enhanced.mp4")
-        enh.enhance(raw, enhanced)
+        enh.enhance(
+            raw, enhanced,
+            watermark_text=cfg.watermark_text,
+            filter_style=cfg.filter_style,
+            font_file=cfg.watermark_font_file,
+        )
         print(f"[enhance] -> {enhanced} ({os.path.getsize(enhanced)} bytes)")
 
         caption = captions.build_caption(title, tags)
