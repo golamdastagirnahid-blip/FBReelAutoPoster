@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+downloads/
+*.mp4
+*.mov
+*.mkv
+.DS_Store
+
+# OAuth / service-account credentials must NEVER be committed
+client_secret*.json
+client_secrets*.json
+credentials*.json
+service_account*.json
+*-oauth-client.json
+Downloaded.json
+token.json
+

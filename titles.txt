@@ -1,0 +1,25 @@
+# Fallback titles used ONLY when the filename has no real title text
+# (e.g. it was just hashtags, or got over-truncated by Drive).
+# One title per line. Lines starting with '# ' are comments.
+# Curate to your niche.
+
+Beautiful birds in their natural habitat
+Adorable baby birds you have to see
+Cute bird moments to brighten your day
+Wholesome bird family captured on camera
+Mesmerizing bird behavior in slow motion
+A peaceful moment with these gorgeous birds
+Relaxing bird sounds and soothing visuals
+Nature's tiny miracles caught on camera
+The most heartwarming bird video today
+Birds being absolutely precious
+This bird family will melt your heart
+Pure joy in feathered form
+Stunning wildlife moments you can't miss
+Calming nature break for your timeline
+Tiny birds, huge personalities
+A glimpse into the secret life of birds
+Feel-good bird content for your feed
+The cutest thing you'll see all day
+Nature is healing — watch this
+Beautiful chaos in the bird world

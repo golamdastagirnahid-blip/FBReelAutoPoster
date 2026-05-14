@@ -1,0 +1,72 @@
+# One hashtag per line. Leading '#' optional. Lines starting with '#' alone
+# OR with a space after '#' are comments. Blank lines ignored.
+# Curate this list to your niche. The tool randomly samples N each post so
+# every reel has a fresh, humanized tag mix.
+
+# --- Core niche (birds / nature, based on your current source folder) ---
+birds
+birdlover
+birdsofinstagram
+birdwatching
+cutebirds
+babybirds
+birdfamily
+nature
+naturelovers
+naturephotography
+wildlife
+wildlifephotography
+animals
+animalsofinstagram
+cuteanimals
+adorableanimals
+relax
+relaxing
+relaxingvideo
+asmr
+calming
+peaceful
+satisfying
+healing
+
+# --- Reels / discovery boosters ---
+reels
+reelsinstagram
+reelsfb
+reelsviral
+fbreels
+facebookreels
+viral
+viralvideos
+viralreels
+trending
+trendingreels
+explore
+explorepage
+foryou
+foryoupage
+fyp
+fypviral
+shorts
+shortsvideo
+shortsfeed
+
+# --- Engagement / mood ---
+love
+beautiful
+amazing
+wow
+omg
+heartwarming
+feelgood
+mood
+vibes
+goodvibes
+positivevibes
+
+# --- Generic high-volume ---
+instagood
+instadaily
+photooftheday
+videooftheday
+2025

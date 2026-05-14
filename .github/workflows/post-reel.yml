@@ -1,0 +1,90 @@
+name: Post FB Reel
+
+on:
+  schedule:
+    # Every 30 minutes, 24/7. The scheduler module decides if a slot is due.
+    # GitHub Actions cron runs in UTC. Free tier: 2000 minutes/month is plenty
+    # — each run is short (skips quickly when not due).
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no actual posting)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # needed to commit state/ back to the repo
+
+concurrency:
+  group: post-fb-reel
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      FB_PAGE_ID:      ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN:   ${{ secrets.FB_PAGE_TOKEN }}
+      FB_API_VERSION:  ${{ vars.FB_API_VERSION || 'v21.0' }}
+      DRIVE_FOLDER_ID:           ${{ secrets.DRIVE_FOLDER_ID }}
+      DRIVE_ARCHIVE_FOLDER_ID:   ${{ secrets.DRIVE_ARCHIVE_FOLDER_ID }}
+      DRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.DRIVE_SERVICE_ACCOUNT_JSON }}
+      DRIVE_OAUTH_REFRESH_TOKEN: ${{ secrets.DRIVE_OAUTH_REFRESH_TOKEN }}
+      DRIVE_OAUTH_CLIENT_ID:     ${{ secrets.DRIVE_OAUTH_CLIENT_ID }}
+      DRIVE_OAUTH_CLIENT_SECRET: ${{ secrets.DRIVE_OAUTH_CLIENT_SECRET }}
+      TIMEZONE:        ${{ vars.TIMEZONE || 'Asia/Dhaka' }}
+      POSTS_PER_DAY_MIN: ${{ vars.POSTS_PER_DAY_MIN || '5' }}
+      POSTS_PER_DAY_MAX: ${{ vars.POSTS_PER_DAY_MAX || '7' }}
+      WINDOW_START_HOUR: ${{ vars.WINDOW_START_HOUR || '9' }}
+      WINDOW_END_HOUR:   ${{ vars.WINDOW_END_HOUR || '22' }}
+      SLOT_TOLERANCE_MINUTES: ${{ vars.SLOT_TOLERANCE_MINUTES || '20' }}
+      HASHTAGS_PER_POST_MIN: ${{ vars.HASHTAGS_PER_POST_MIN || '8' }}
+      HASHTAGS_PER_POST_MAX: ${{ vars.HASHTAGS_PER_POST_MAX || '12' }}
+      HASHTAGS_FILE: ${{ vars.HASHTAGS_FILE || 'hashtags.txt' }}
+      TITLES_FILE: ${{ vars.TITLES_FILE || 'titles.txt' }}
+      DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Run poster
+        run: python -m src.main
+
+      - name: Commit state changes
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain state)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state
+            git commit -m "chore(state): update posted/schedule [skip ci]"
+            # Retry-friendly push (rebase if main moved)
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+              if git push origin HEAD:"${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+              sleep 3
+            done
+            echo "Failed to push state after retries" >&2
+            exit 1
+          else
+            echo "No state changes to commit."
+          fi
