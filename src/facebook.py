@@ -5,13 +5,18 @@ Phases:
   1) start  -> get video_id and upload_url
   2) upload -> POST raw bytes to upload_url with Authorization: OAuth <token>
   3) finish -> publish with description / metadata
+
+All three phases are wrapped in an exponential-backoff retry so that
+transient errors (429 rate-limit, 500/502/503/504) don't fail the run.
 """
 from __future__ import annotations
 import os
+import random
 import time
 import requests
 
 GRAPH = "https://graph.facebook.com"
+RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 
 
 class FacebookError(RuntimeError):
@@ -20,6 +25,35 @@ class FacebookError(RuntimeError):
 
 def _graph(api_version: str) -> str:
     return f"{GRAPH}/{api_version}"
+
+
+def _retry(fn, *, label: str, attempts: int = 4, base_sleep: float = 2.0):
+    """Run ``fn()`` with exponential backoff + jitter on transient HTTP errors.
+
+    ``fn`` must raise ``FacebookError`` whose message embeds the status code
+    via the canonical "<phase> failed: <status> <body>" format, OR may raise
+    ``requests.RequestException`` for network errors.
+    """
+    last_exc: Exception | None = None
+    for i in range(1, attempts + 1):
+        try:
+            return fn()
+        except requests.RequestException as e:
+            last_exc = e
+            transient = True
+        except FacebookError as e:
+            last_exc = e
+            msg = str(e)
+            transient = any(f" {s} " in msg for s in (str(c) for c in RETRYABLE_STATUS))
+            if not transient:
+                raise
+        if i == attempts:
+            break
+        sleep = base_sleep * (2 ** (i - 1)) + random.uniform(0, 1.5)
+        print(f"[facebook] {label} transient failure (attempt {i}/{attempts}): "
+              f"{last_exc}; retrying in {sleep:.1f}s")
+        time.sleep(sleep)
+    raise FacebookError(f"{label} exhausted retries: {last_exc}")
 
 
 def start_upload(page_id: str, token: str, api_version: str) -> tuple[str, str]:
@@ -96,18 +130,21 @@ def publish_reel(
     description: str,
     title: str | None = None,
 ) -> dict:
-    """Full 3-phase publish. Returns finish payload incl. post_id."""
-    video_id, upload_url = start_upload(page_id, token, api_version)
-    upload_bytes(upload_url, token, video_path)
+    """Full 3-phase publish with per-phase retries. Returns finish payload."""
+    video_id, upload_url = _retry(
+        lambda: start_upload(page_id, token, api_version), label="start",
+    )
+    _retry(
+        lambda: upload_bytes(upload_url, token, video_path), label="upload",
+    )
     # Tiny pacing wait so FB's internal pipeline is happy
     time.sleep(2)
-    result = finish_upload(
-        page_id=page_id,
-        token=token,
-        api_version=api_version,
-        video_id=video_id,
-        description=description,
-        title=title,
+    result = _retry(
+        lambda: finish_upload(
+            page_id=page_id, token=token, api_version=api_version,
+            video_id=video_id, description=description, title=title,
+        ),
+        label="finish",
     )
     result["video_id"] = video_id
     return result

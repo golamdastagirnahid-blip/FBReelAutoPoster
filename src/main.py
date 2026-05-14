@@ -23,10 +23,20 @@ import os
 import random
 import sys
 import tempfile
+import time
 import traceback
 
 from . import captions, drive, enhance as enh, facebook as fb, scheduler, state
 from .config import load_config
+
+
+def _is_force_post() -> bool:
+    """True when the run should bypass the scheduler and post immediately.
+
+    Triggered by env var ``FORCE_POST=true`` (set by the workflow when
+    triggered manually via workflow_dispatch).
+    """
+    return os.environ.get("FORCE_POST", "").strip().lower() in ("1", "true", "yes")
 
 
 def _pick_video(files: list[dict], posted: dict) -> dict | None:
@@ -52,11 +62,16 @@ def run() -> int:
     )
     print(f"[scheduler] {date_str} tz={cfg.timezone} slots={sched['slots']} done={sched.get('done', [])}")
 
-    due = scheduler.due_slot(sched, date_str, tz, cfg.slot_tolerance_minutes)
-    if due is None:
-        print("[scheduler] no slot due; exiting")
-        return 0
-    print(f"[scheduler] slot due: {due.slot_time}")
+    force = _is_force_post()
+    due = None
+    if force:
+        print("[scheduler] FORCE_POST=true -> bypassing schedule, posting now")
+    else:
+        due = scheduler.due_slot(sched, date_str, tz, cfg.slot_tolerance_minutes)
+        if due is None:
+            print("[scheduler] no slot due; exiting")
+            return 0
+        print(f"[scheduler] slot due: {due.slot_time}")
 
     folder_id = drive.extract_folder_id(cfg.drive_folder_id)
     archive_id = drive.extract_folder_id(cfg.drive_archive_folder_id) if cfg.drive_archive_folder_id else ""
@@ -120,6 +135,15 @@ def run() -> int:
         print(f"[enhance] -> {enhanced} ({os.path.getsize(enhanced)} bytes)")
 
         caption = captions.build_caption(title, tags)
+
+        # Humanization jitter (auto/cron runs only). For manual runs we
+        # post immediately, no waiting.
+        if not force and not cfg.dry_run:
+            jitter = random.randint(0, 240)  # 0..4 minutes
+            if jitter:
+                print(f"[humanize] sleeping {jitter}s before publish to vary post timing")
+                time.sleep(jitter)
+
         if cfg.dry_run:
             print("[dry-run] would publish reel; caption follows:")
             print("---")
@@ -163,8 +187,9 @@ def run() -> int:
     state.mark_posted(
         chosen["id"], chosen["name"], fb_post_id,
     )
-    scheduler.mark_slot_done(date_str, sched, due.slot_time)
-    print(f"[state] saved (archived={archived})")
+    if due is not None:
+        scheduler.mark_slot_done(date_str, sched, due.slot_time)
+    print(f"[state] saved (archived={archived} force={force})")
     return 0
 
 

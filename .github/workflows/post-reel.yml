@@ -12,6 +12,10 @@ on:
         description: "Dry run (no actual posting)"
         type: boolean
         default: false
+      force_post:
+        description: "Force post NOW (bypass scheduler — for manual runs)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write   # needed to commit state/ back to the repo
@@ -35,16 +39,18 @@ jobs:
       DRIVE_OAUTH_CLIENT_ID:     ${{ secrets.DRIVE_OAUTH_CLIENT_ID }}
       DRIVE_OAUTH_CLIENT_SECRET: ${{ secrets.DRIVE_OAUTH_CLIENT_SECRET }}
       TIMEZONE:        ${{ vars.TIMEZONE || 'Asia/Dhaka' }}
-      POSTS_PER_DAY_MIN: ${{ vars.POSTS_PER_DAY_MIN || '5' }}
-      POSTS_PER_DAY_MAX: ${{ vars.POSTS_PER_DAY_MAX || '7' }}
-      WINDOW_START_HOUR: ${{ vars.WINDOW_START_HOUR || '9' }}
-      WINDOW_END_HOUR:   ${{ vars.WINDOW_END_HOUR || '22' }}
-      SLOT_TOLERANCE_MINUTES: ${{ vars.SLOT_TOLERANCE_MINUTES || '20' }}
+      POSTS_PER_DAY_MIN: ${{ vars.POSTS_PER_DAY_MIN || '7' }}
+      POSTS_PER_DAY_MAX: ${{ vars.POSTS_PER_DAY_MAX || '10' }}
+      WINDOW_START_HOUR: ${{ vars.WINDOW_START_HOUR || '8' }}
+      WINDOW_END_HOUR:   ${{ vars.WINDOW_END_HOUR || '23' }}
+      SLOT_TOLERANCE_MINUTES: ${{ vars.SLOT_TOLERANCE_MINUTES || '25' }}
       HASHTAGS_PER_POST_MIN: ${{ vars.HASHTAGS_PER_POST_MIN || '8' }}
       HASHTAGS_PER_POST_MAX: ${{ vars.HASHTAGS_PER_POST_MAX || '12' }}
       HASHTAGS_FILE: ${{ vars.HASHTAGS_FILE || 'hashtags.txt' }}
       TITLES_FILE: ${{ vars.TITLES_FILE || 'titles.txt' }}
       DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+      # FORCE_POST: skip scheduler & post immediately. Only set on manual runs.
+      FORCE_POST: ${{ github.event_name == 'workflow_dispatch' && inputs.force_post && 'true' || 'false' }}
 
     steps:
       - name: Checkout repo
