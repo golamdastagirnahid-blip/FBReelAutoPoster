@@ -13,6 +13,7 @@ operations against Drive API v3.
 """
 from __future__ import annotations
 import json
+import os
 from typing import Iterable
 
 from google.oauth2.credentials import Credentials as UserCredentials
