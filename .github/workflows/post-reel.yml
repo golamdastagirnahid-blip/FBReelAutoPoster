@@ -72,6 +72,9 @@ jobs:
       - name: Install Python deps
         run: pip install -r requirements.txt
 
+      - name: Preflight (verify secrets + FB + Drive connectivity)
+        run: python -m src.preflight
+
       - name: Run poster
         run: python -m src.main
 
