@@ -90,21 +90,32 @@ def due_slot(
     tz: ZoneInfo,
     tolerance_min: int,
 ) -> DueSlot | None:
-    """Return earliest pending slot whose time <= now_local (within tolerance)."""
+    """Return earliest pending slot whose time <= now_local (within tolerance).
+
+    A slot fires if ``now`` is within ``tolerance_min`` minutes BEFORE the
+    slot OR up to 12 hours AFTER it (catch-up window for missed cron ticks).
+    """
     now_local = datetime.now(tz)
+    print(f"[scheduler] now_local={now_local.strftime('%Y-%m-%d %H:%M:%S %Z')} "
+          f"tolerance={tolerance_min}min catch_up_window=12h")
     done = set(sched.get("done", []))
     for idx, hhmm in enumerate(sched.get("slots", [])):
         if hhmm in done:
+            print(f"[scheduler]   slot {hhmm} -> SKIP (already done)")
             continue
         h, m = (int(x) for x in hhmm.split(":"))
         slot_dt = now_local.replace(hour=h, minute=m, second=0, microsecond=0)
-        # fire if now is at-or-after slot, OR within tolerance before
-        if now_local >= slot_dt - timedelta(minutes=tolerance_min):
-            if now_local <= slot_dt + timedelta(hours=12):  # safety: same day
-                return DueSlot(
-                    index=idx, slot_time=hhmm, schedule=sched,
-                    date_str=date_str, tz=tz,
-                )
+        earliest = slot_dt - timedelta(minutes=tolerance_min)
+        latest = slot_dt + timedelta(hours=12)
+        in_window = earliest <= now_local <= latest
+        delta_min = (now_local - slot_dt).total_seconds() / 60
+        print(f"[scheduler]   slot {hhmm} window=[{earliest.strftime('%H:%M')}..{latest.strftime('%H:%M')}] "
+              f"delta_from_slot={delta_min:+.1f}min in_window={in_window}")
+        if in_window:
+            return DueSlot(
+                index=idx, slot_time=hhmm, schedule=sched,
+                date_str=date_str, tz=tz,
+            )
     return None
 
 
