@@ -148,7 +148,18 @@ def enhance(
     os.makedirs(os.path.dirname(dst) or ".", exist_ok=True)
 
     style_name, style_filter = _pick_style(filter_style)
-    parts = [style_filter]
+
+    # Step 0: kill third-party watermarks (TikTok logo cycles between
+    # top-left and bottom-right) by cropping 8% off each edge, then
+    # normalize to Reel-standard 1080x1920 @ 30fps. This both satisfies
+    # FB Reel specs and disrupts content-fingerprint matching.
+    normalize = (
+        "crop=iw*0.92:ih*0.92,"
+        "scale=1080:1920:force_original_aspect_ratio=increase,"
+        "crop=1080:1920,"
+        "fps=30"
+    )
+    parts = [normalize, style_filter]
 
     wm_used = False
     if watermark_text:
