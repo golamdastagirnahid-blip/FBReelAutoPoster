@@ -132,6 +132,34 @@ def _default_font() -> str:
     return DEFAULT_FONT_LINUX if os.name == "posix" else DEFAULT_FONT_WIN
 
 
+def _stealth_params(seed_str: str) -> dict:
+    """Return per-video randomized stealth parameters.
+
+    Seeded by ``seed_str`` (typically the source filename) so the same
+    video produces the same params across retries — but every *different*
+    video gets a unique fingerprint-disrupting transform set.
+    """
+    rng = random.Random(seed_str)
+    return {
+        "crop_pct":   rng.uniform(0.06, 0.10),       # 6-10% edge crop
+        "rotate_deg": rng.uniform(-0.4, 0.4),        # micro rotation
+        "zoom":       rng.uniform(1.01, 1.04),       # subtle zoom-in
+        "fps":        rng.choice([29, 30, 31]),      # vary fps
+        "crf":        rng.choice([19, 20, 21, 22]),  # vary quality
+        "noise":      rng.uniform(1.5, 3.5),         # imperceptible film grain
+        "vignette":   rng.uniform(0.10, 0.25),       # soft vignette
+        "eq_bright":  rng.uniform(-0.02, 0.03),      # micro brightness jitter
+        "eq_contr":   rng.uniform(0.98, 1.04),       # micro contrast jitter
+        "eq_satur":   rng.uniform(0.96, 1.06),       # micro saturation jitter
+        "eq_hue":     rng.uniform(-4.0, 4.0),        # micro hue shift (deg)
+        "speed":      rng.uniform(0.97, 1.03),       # ±3% speed (audio pitch shifts with it)
+        "trim_start": rng.uniform(0.05, 0.30),       # trim head
+        "trim_end":   rng.uniform(0.05, 0.30),       # trim tail
+        "audio_pitch": rng.uniform(0.97, 1.03),      # extra audio pitch tweak
+        "gop":        rng.choice([48, 60, 75, 90]),  # vary GOP size
+    }
+
+
 def enhance(
     src: str,
     dst: str,
@@ -140,26 +168,71 @@ def enhance(
     filter_style: str = "random",
     font_file: str = "",
 ) -> str:
-    """Run ffmpeg with color grade + optional watermark + audio normalize.
+    """Stealth-grade FFmpeg pipeline that defeats FB's perceptual-hash,
+    audio-fingerprint, and 3rd-party-watermark detectors.
 
-    Returns ``dst`` on success; raises ``subprocess.CalledProcessError`` on
-    ffmpeg failure.
+    Layers applied (every video gets a unique seeded combination):
+
+    Video:
+      1. Edge crop 6-10%   -> removes TikTok/IG/YT watermarks at any corner
+      2. Micro rotation    -> breaks frame-aligned hashing
+      3. Subtle zoom       -> defeats spatial fingerprints
+      4. Color-grade preset (random)
+      5. Micro EQ jitter   -> brightness/contrast/sat/hue drift per video
+      6. Soft vignette     -> alters edge luma signature
+      7. Imperceptible film grain
+      8. Variable fps (29/30/31)
+      9. Output: 1080x1920, H.264 high, randomized CRF + GOP
+     10. Top-right text watermark (your brand)
+     11. Strip ALL source metadata
+
+    Audio:
+      1. Pitch shift ±3% (asetrate + atempo)
+      2. EBU R128 loudness normalize to -14 LUFS
+      3. AAC 160k @ 44.1kHz
+
+    Container:
+      - faststart, no source metadata, randomized encoder params
+
+    Returns ``dst`` on success; raises ``subprocess.CalledProcessError``.
     """
     os.makedirs(os.path.dirname(dst) or ".", exist_ok=True)
 
     style_name, style_filter = _pick_style(filter_style)
+    sp = _stealth_params(os.path.basename(src))
 
-    # Step 0: kill third-party watermarks (TikTok logo cycles between
-    # top-left and bottom-right) by cropping 8% off each edge, then
-    # normalize to Reel-standard 1080x1920 @ 30fps. This both satisfies
-    # FB Reel specs and disrupts content-fingerprint matching.
+    # --- Video filter chain (order matters) ------------------------------
+    crop_keep = 1.0 - sp["crop_pct"]                      # e.g. 0.92
+    inner_w = f"iw*{crop_keep:.4f}"
+    inner_h = f"ih*{crop_keep:.4f}"
+    zoom = sp["zoom"]
+    rot_rad = sp["rotate_deg"] * 3.14159265 / 180.0
+
     normalize = (
-        "crop=iw*0.92:ih*0.92,"
-        "scale=1080:1920:force_original_aspect_ratio=increase,"
-        "crop=1080:1920,"
-        "fps=30"
+        # 1. crop edges (kill 3rd-party watermarks)
+        f"crop={inner_w}:{inner_h},"
+        # 2. tiny rotation w/ same-color fill
+        f"rotate={rot_rad:.5f}:ow=rotw({rot_rad:.5f}):oh=roth({rot_rad:.5f}):c=black,"
+        # 3. zoom-in slightly to hide rotation borders
+        f"scale=trunc(iw*{zoom:.4f}/2)*2:trunc(ih*{zoom:.4f}/2)*2,"
+        # 4. force final 9:16 1080x1920
+        f"scale=1080:1920:force_original_aspect_ratio=increase,"
+        f"crop=1080:1920,"
+        # 5. lock fps
+        f"fps={sp['fps']}"
     )
-    parts = [normalize, style_filter]
+
+    micro_eq = (
+        f"eq=contrast={sp['eq_contr']:.3f}"
+        f":brightness={sp['eq_bright']:.3f}"
+        f":saturation={sp['eq_satur']:.3f},"
+        f"hue=h={sp['eq_hue']:.2f}"
+    )
+
+    vignette = f"vignette=PI/{4.0 + sp['vignette']*4:.2f}"
+    grain = f"noise=alls={sp['noise']:.1f}:allf=t"
+
+    parts = [normalize, style_filter, micro_eq, vignette, grain]
 
     wm_used = False
     if watermark_text:
@@ -171,15 +244,33 @@ def enhance(
             print(f"[enhance] WARN: font not found at {font}; skipping watermark")
 
     vf = ",".join(parts)
-    print(f"[enhance] style={style_name} watermark={'on' if wm_used else 'off'}")
+
+    # --- Audio filter chain ----------------------------------------------
+    # asetrate shifts pitch + speed; atempo brings duration back to ~1x.
+    pitch = sp["audio_pitch"]
+    af = (
+        f"asetrate=44100*{pitch:.4f},"
+        f"aresample=44100,"
+        f"atempo={1/pitch:.4f},"
+        f"{AUDIO_FILTER}"
+    )
+
+    print(
+        f"[enhance] style={style_name} watermark={'on' if wm_used else 'off'} "
+        f"crop={sp['crop_pct']*100:.1f}% rot={sp['rotate_deg']:.2f}deg "
+        f"zoom={sp['zoom']:.3f} fps={sp['fps']} crf={sp['crf']} "
+        f"pitch={pitch:.3f}"
+    )
 
     cmd = [
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
         "-i", src,
         "-vf", vf,
-        "-af", AUDIO_FILTER,
+        "-af", af,
+        "-map_metadata", "-1",                       # strip source metadata
         "-c:v", "libx264", "-profile:v", "high", "-preset", "medium",
-        "-crf", "20", "-pix_fmt", "yuv420p",
+        "-crf", str(sp["crf"]), "-pix_fmt", "yuv420p",
+        "-g", str(sp["gop"]),
         "-c:a", "aac", "-b:a", "160k", "-ar", "44100",
         "-movflags", "+faststart",
         dst,
