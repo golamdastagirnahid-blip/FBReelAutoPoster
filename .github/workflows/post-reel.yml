@@ -2,10 +2,16 @@ name: Post FB Reel
 
 on:
   schedule:
-    # Every 30 minutes, 24/7. The scheduler module decides if a slot is due.
-    # GitHub Actions cron runs in UTC. Free tier: 2000 minutes/month is plenty
-    # — each run is short (skips quickly when not due).
-    - cron: "*/30 * * * *"
+    # Every ~20 minutes, 24/7. Off-the-hour minutes (:07/:27/:47) avoid
+    # GitHub Actions cron's high-load slots at :00/:30 which often get
+    # delayed or skipped. The scheduler module inside still decides if
+    # a slot is actually due — extra ticks are cheap (exit in seconds).
+    - cron: "7,27,47 * * * *"
+  # External pinger fallback: cron-job.org / UptimeRobot can call the
+  # GitHub API to dispatch this workflow every N minutes if GH cron
+  # silently skips. workflow_dispatch is already wired below.
+  repository_dispatch:
+    types: [external-tick]
   workflow_dispatch:
     inputs:
       dry_run:
