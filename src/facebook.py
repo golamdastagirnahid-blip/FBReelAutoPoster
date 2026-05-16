@@ -18,6 +18,36 @@ import requests
 GRAPH = "https://graph.facebook.com"
 RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 
+# Mimic the official Facebook for Android app's User-Agent so the upload
+# stream looks the same as a real human tap-and-post in the mobile app.
+# (FB's spam classifier weighs UA as one of many signals.) Multiple recent
+# build IDs are rotated per call so we don't fingerprint as one device.
+_MOBILE_UAS = [
+    "Mozilla/5.0 (Linux; Android 14; SM-S918B Build/UP1A.231005.007; wv) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 "
+    "Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/465.0.0.42.93;]",
+    "Mozilla/5.0 (Linux; Android 13; Pixel 7 Build/TQ3A.230901.001; wv) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/120.0.0.0 "
+    "Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/460.0.0.34.85;]",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) "
+    "AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 "
+    "[FBAN/FBIOS;FBAV/466.0.0.36.105;FBBV/612345678;FBDV/iPhone15,3;"
+    "FBMD/iPhone;FBSN/iOS;FBSV/17.5;FBSS/3;FBID/phone;FBLC/en_US;FBOP/5]",
+]
+
+
+def _ua() -> str:
+    return random.choice(_MOBILE_UAS)
+
+
+def _headers(token: str | None = None, *, octet: bool = False) -> dict:
+    h = {"User-Agent": _ua()}
+    if token:
+        h["Authorization"] = f"OAuth {token}"
+    if octet:
+        h["Content-Type"] = "application/octet-stream"
+    return h
+
 
 class FacebookError(RuntimeError):
     pass
@@ -61,6 +91,7 @@ def start_upload(page_id: str, token: str, api_version: str) -> tuple[str, str]:
     r = requests.post(
         f"{_graph(api_version)}/{page_id}/video_reels",
         data={"upload_phase": "start", "access_token": token},
+        headers=_headers(),
         timeout=60,
     )
     if not r.ok:
@@ -76,12 +107,8 @@ def start_upload(page_id: str, token: str, api_version: str) -> tuple[str, str]:
 def upload_bytes(upload_url: str, token: str, path: str) -> None:
     """Phase 2. Streaming upload of the file's bytes."""
     size = os.path.getsize(path)
-    headers = {
-        "Authorization": f"OAuth {token}",
-        "offset": "0",
-        "file_size": str(size),
-        "Content-Type": "application/octet-stream",
-    }
+    headers = _headers(token, octet=True)
+    headers.update({"offset": "0", "file_size": str(size)})
     with open(path, "rb") as fp:
         r = requests.post(upload_url, headers=headers, data=fp, timeout=900)
     if not r.ok:
@@ -101,8 +128,9 @@ def finish_upload(
     video_id: str,
     description: str,
     title: str | None = None,
+    content_category: str | None = None,
 ) -> dict:
-    """Phase 3. Publish the reel immediately."""
+    """Phase 3. Publish the reel immediately with full mobile-app metadata."""
     data = {
         "upload_phase": "finish",
         "video_id": video_id,
@@ -112,9 +140,16 @@ def finish_upload(
     }
     if title:
         data["title"] = title
+    if content_category:
+        # FB Reels supported categories include: BEAUTY_FASHION, BUSINESS,
+        # CARS_TRUCKS, COMEDY, CUTE_ANIMALS, ENTERTAINMENT, FAMILY, FITNESS,
+        # FOOD_HEALTH, HOME, LIFESTYLE, MUSIC, NEWS, OTHER, POLITICS, SCIENCE,
+        # SPORTS, TECHNOLOGY, VIDEO_GAMING.
+        data["content_category"] = content_category
     r = requests.post(
         f"{_graph(api_version)}/{page_id}/video_reels",
         data=data,
+        headers=_headers(),
         timeout=120,
     )
     if not r.ok:
@@ -129,20 +164,37 @@ def publish_reel(
     video_path: str,
     description: str,
     title: str | None = None,
+    content_category: str | None = None,
 ) -> dict:
-    """Full 3-phase publish with per-phase retries. Returns finish payload."""
+    """Full 3-phase publish with per-phase retries + human-paced delays.
+
+    Real users in the FB app don't fire start/upload/finish back-to-back
+    instantly — there's a "tap record / preview / tap share" gap. We
+    insert randomized pauses to mimic that cadence.
+    """
+    # Pre-tap "open composer" pause
+    time.sleep(random.uniform(1.5, 4.0))
+
     video_id, upload_url = _retry(
         lambda: start_upload(page_id, token, api_version), label="start",
     )
+
+    # "Selecting video / preview" pause
+    time.sleep(random.uniform(2.0, 5.0))
+
     _retry(
         lambda: upload_bytes(upload_url, token, video_path), label="upload",
     )
-    # Tiny pacing wait so FB's internal pipeline is happy
-    time.sleep(2)
+
+    # "Reviewing caption / picking cover" pause — the longest gap, like
+    # a real user typing the description before tapping Share.
+    time.sleep(random.uniform(8.0, 18.0))
+
     result = _retry(
         lambda: finish_upload(
             page_id=page_id, token=token, api_version=api_version,
             video_id=video_id, description=description, title=title,
+            content_category=content_category,
         ),
         label="finish",
     )

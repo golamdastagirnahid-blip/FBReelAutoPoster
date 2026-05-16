@@ -45,8 +45,9 @@ jobs:
       DRIVE_OAUTH_CLIENT_ID:     ${{ secrets.DRIVE_OAUTH_CLIENT_ID }}
       DRIVE_OAUTH_CLIENT_SECRET: ${{ secrets.DRIVE_OAUTH_CLIENT_SECRET }}
       TIMEZONE:        ${{ vars.TIMEZONE || 'Asia/Dhaka' }}
-      POSTS_PER_DAY_MIN: ${{ vars.POSTS_PER_DAY_MIN || '7' }}
-      POSTS_PER_DAY_MAX: ${{ vars.POSTS_PER_DAY_MAX || '10' }}
+      # Lower, more human cadence. Heavy posting (10+/day) gets reach-throttled.
+      POSTS_PER_DAY_MIN: ${{ vars.POSTS_PER_DAY_MIN || '5' }}
+      POSTS_PER_DAY_MAX: ${{ vars.POSTS_PER_DAY_MAX || '7' }}
       # Full 24h posting window for maximum humanization / unpredictability.
       # Slots are still randomized per day, with >=60min min gap enforced.
       WINDOW_START_HOUR: ${{ vars.WINDOW_START_HOUR || '0' }}
@@ -57,7 +58,14 @@ jobs:
       HASHTAGS_FILE: ${{ vars.HASHTAGS_FILE || 'hashtags.txt' }}
       TITLES_FILE: ${{ vars.TITLES_FILE || 'titles.txt' }}
       FILTER_STYLE:   ${{ vars.FILTER_STYLE || 'random' }}
-      WATERMARK_TEXT: ${{ vars.WATERMARK_TEXT || 'Ethan Wilder' }}
+      # Empty by default: a baked-in brand watermark on every reel is a
+      # known low-trust signal. Override via repo Variable WATERMARK_TEXT
+      # if you really want one.
+      WATERMARK_TEXT: ${{ vars.WATERMARK_TEXT || '' }}
+      # Reels content category (helps FB classify + recommend). One of:
+      # OTHER, LIFESTYLE, BEAUTY_FASHION, COMEDY, CUTE_ANIMALS, ENTERTAINMENT,
+      # FAMILY, FITNESS, FOOD_HEALTH, HOME, MUSIC, SCIENCE, SPORTS, TECHNOLOGY.
+      FB_CONTENT_CATEGORY: ${{ vars.FB_CONTENT_CATEGORY || 'OTHER' }}
       DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
       # FORCE_POST: skip scheduler & post immediately. Only set on manual runs.
       FORCE_POST: ${{ github.event_name == 'workflow_dispatch' && inputs.force_post && 'true' || 'false' }}

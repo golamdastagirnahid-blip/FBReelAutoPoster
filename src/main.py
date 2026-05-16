@@ -163,6 +163,7 @@ def run() -> int:
                 video_path=enhanced,
                 description=caption,
                 title=title,
+                content_category=os.environ.get("FB_CONTENT_CATEGORY", "OTHER"),
             )
             print(f"[facebook] published: {result}")
             fb_post_id = result.get("post_id") or result.get("video_id")
