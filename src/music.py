@@ -128,9 +128,9 @@ def search_tracks(
     client_id: str,
     tags: str,
     *,
-    limit: int = 50,
-    min_duration: int = 30,
-    max_duration: int = 240,
+    limit: int = 200,
+    min_duration: int = 20,
+    max_duration: int = 600,
 ) -> list[Track]:
     """Search Jamendo for commercial-OK tracks matching ``tags``.
 
@@ -151,6 +151,11 @@ def search_tracks(
         "order": "popularity_total_desc",
         "durationbetween": f"{min_duration}_{max_duration}",
     }
+    # If empty tags supplied, skip the fuzzytags param entirely so we
+    # browse the most popular catalog-wide (last-resort fallback path).
+    if not tags.strip():
+        params.pop("fuzzytags", None)
+
     r = _http_get_with_retry(
         JAMENDO_API, params=params,
         timeout=REQUEST_TIMEOUT_SEARCH, label="jamendo-search",
@@ -158,9 +163,14 @@ def search_tracks(
     payload = r.json()
     results = payload.get("results", [])
     out: list[Track] = []
+    rejected_licenses: dict[str, int] = {}
     for t in results:
         license_url = t.get("license_ccurl") or t.get("license_url") or ""
         if not _is_commercial_ok(license_url):
+            # Tally the most common rejected license substrings (helps
+            # debug "why no tracks?" issues without hammering the API).
+            key = (license_url or "<empty>")[:80]
+            rejected_licenses[key] = rejected_licenses.get(key, 0) + 1
             continue
         audio_url = t.get("audio") or t.get("audiodownload")
         if not audio_url:
@@ -173,6 +183,14 @@ def search_tracks(
             audio_url=audio_url,
             duration=int(t.get("duration", 0)),
         ))
+    print(
+        f"[music] search tags={tags!r}: total={len(results)} "
+        f"commercial-OK={len(out)} rejected={sum(rejected_licenses.values())}"
+    )
+    if not out and rejected_licenses:
+        # Print top 3 rejected license URLs to make the cause obvious.
+        top = sorted(rejected_licenses.items(), key=lambda kv: -kv[1])[:3]
+        print(f"[music]   top rejected licenses: {top}")
     _SEARCH_CACHE[cache_key] = out
     return out
 
@@ -270,25 +288,45 @@ def fetch_music_for_video(
     dst_path: str,
     *,
     seed: str | None = None,
-    fallback_tags: str = "instrumental,ambient",
 ) -> Track:
     """Pick + download a commercial-OK track. Raises ``MusicUnavailable``
     if nothing usable can be obtained after retries + fallback search.
 
-    The function tries the requested ``tags`` first; if no commercial-OK
-    tracks come back, it retries with ``fallback_tags`` (broader pool).
+    Fallback chain (each step tried in order until one yields a usable track):
+      1. The caller-supplied ``tags`` (e.g. mood/genre combo).
+      2. Each individual tag from ``tags`` as a single-tag search.
+      3. A broad fallback of ``"instrumental,ambient"``.
+      4. No tags at all — popularity browse of the whole CC catalog.
     """
+    # Build attempt list with de-dup, preserving order
+    attempts: list[str] = []
+    seen: set[str] = set()
+
+    def _add(t: str) -> None:
+        key = t.strip().lower()
+        if key not in seen:
+            seen.add(key)
+            attempts.append(t)
+
+    _add(tags)
+    for single in tags.split(","):
+        single = single.strip()
+        if single:
+            _add(single)
+    _add("instrumental,ambient")
+    _add("")   # final no-tag broad popular browse
+
     last_err: str = ""
-    for search_tags in (tags, fallback_tags):
+    for search_tags in attempts:
+        label = search_tags or "<no-tags broad>"
         try:
             track = pick_track(client_id, search_tags, seed=seed)
         except Exception as e:  # noqa: BLE001
-            last_err = f"search failed for tags={search_tags!r}: {e}"
+            last_err = f"search failed for tags={label!r}: {e}"
             print(f"[music] {last_err}")
             continue
         if track is None:
-            last_err = f"no commercial-OK tracks for tags={search_tags!r}"
-            print(f"[music] {last_err}")
+            last_err = f"no commercial-OK tracks for tags={label!r}"
             continue
         try:
             download_track(track, dst_path)
@@ -297,6 +335,7 @@ def fetch_music_for_video(
             print(f"[music] {last_err}")
             continue
         print(f"[music] picked id={track.id} '{track.name}' by {track.artist} "
-              f"license={track.license_short} duration={track.duration}s")
+              f"license={track.license_short} duration={track.duration}s "
+              f"(matched stage: {label!r})")
         return track
     raise MusicUnavailable(last_err or "unknown failure")

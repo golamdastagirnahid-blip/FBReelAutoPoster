@@ -189,19 +189,29 @@ def check_jamendo() -> None:
     tags = os.environ.get(
         "MUSIC_TAGS", "ambient,chill,cinematic,instrumental,calm,nature",
     )
-    try:
-        from . import music as music_mod
-        tracks = music_mod.search_tracks(client_id, tags, limit=10)
-    except Exception as e:  # noqa: BLE001
-        _fail("Music (Jamendo)", f"search failed: {e}")
+    from . import music as music_mod
+    # Try the same fallback ladder as the real fetch: primary tags ->
+    # broad fallback -> no tags. Preflight passes if ANY stage yields >=1.
+    stages = [tags, "instrumental,ambient", ""]
+    tracks = []
+    matched_stage = None
+    for stg in stages:
+        try:
+            tracks = music_mod.search_tracks(client_id, stg)
+        except Exception as e:  # noqa: BLE001
+            _fail("Music (Jamendo)", f"search failed at stage {stg!r}: {e}")
+        if tracks:
+            matched_stage = stg or "<no-tags broad>"
+            break
     if not tracks:
         _fail("Music (Jamendo)",
-              f"no commercial-OK (CC0/CC-BY) tracks for tags={tags!r}; "
-              f"broaden MUSIC_TAGS or check client id")
+              f"no commercial-OK (CC0/CC-BY) tracks found in any fallback "
+              f"stage. Check client id permissions or relax MUSIC_TAGS.")
     sample = tracks[0]
     _ok("Music (Jamendo)",
-        f"client_id ok, {len(tracks)} commercial-OK tracks for tags={tags!r} "
-        f"(e.g. '{sample.name}' by {sample.artist} [{sample.license_short}])")
+        f"client_id ok, {len(tracks)} commercial-OK tracks "
+        f"(matched stage: {matched_stage!r}); e.g. '{sample.name}' by "
+        f"{sample.artist} [{sample.license_short}]")
 
 
 def check_filter_style(cfg) -> None:
