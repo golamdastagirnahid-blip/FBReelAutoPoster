@@ -390,6 +390,8 @@ def build_profile(
     video_path: str = "",
     hashtags: list[str] | None = None,
     keywords: list[str] | None = None,
+    semantic_tokens: list[str] | None = None,
+    semantic_energy: float | None = None,
 ) -> MusicProfile:
     """Build a ``MusicProfile`` from any combination of source signals.
 
@@ -403,11 +405,24 @@ def build_profile(
     always returns a usable profile (falls back to a sensible
     ambient/instrumental default).
     """
-    # Hashtags are the highest-signal source: place them first so the
-    # taxonomy matches them directly. Keywords next, then filename/title.
-    primary_text = " ".join(hashtags or []) + " " + " ".join(keywords or [])
+    # Hashtags + semantic-split tokens are the highest-signal source:
+    # place them first so the taxonomy matches them directly. Keywords
+    # next, then filename/title.
+    primary_text = (
+        " ".join(semantic_tokens or [])
+        + " " + " ".join(hashtags or [])
+        + " " + " ".join(keywords or [])
+    )
     tokens = _tokenize(primary_text, filename, title)
     fragment, matched = _apply_taxonomy(tokens)
+    # If the semantic analyzer computed an energy value, blend it in:
+    # weighted 70% taxonomy + 30% semantic, since taxonomy energy is
+    # rule-based and semantic energy is per-token averaged \u2014 they
+    # complement each other.
+    if semantic_energy is not None:
+        fragment["energy"] = round(
+            0.7 * float(fragment["energy"]) + 0.3 * float(semantic_energy), 3
+        )
     stats: dict[str, float] = {}
     if video_path:
         try:

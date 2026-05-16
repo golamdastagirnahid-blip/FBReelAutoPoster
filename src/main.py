@@ -121,21 +121,46 @@ def run() -> int:
         print(f"[drive] downloaded -> {raw} ({os.path.getsize(raw)} bytes)")
         print(f"[drive] real filename: {real_name}")
 
+        from . import semantic as semantic_mod
         title_pool = captions.load_title_pool(cfg.titles_file)
-        title = captions.clean_title(real_name, fallback_pool=title_pool)
         pool = captions.load_hashtag_pool(cfg.hashtags_file)
-        # Pull hashtags + keywords directly out of the source filename.
-        # These reflect the original creator's curated tags and are the
-        # *strongest* signal we have for both FB hashtags and music match.
+        # Extract ground-truth signals from the source filename.
         filename_hashtags = captions.extract_filename_hashtags(real_name)
         filename_keywords = captions.extract_filename_keywords(real_name)
+        # Deep semantic analysis: compound-split + theme classification +
+        # mood vector + synonym expansion.
+        analysis = semantic_mod.analyze(
+            hashtags=filename_hashtags,
+            keywords=filename_keywords,
+            extra_text=os.path.splitext(real_name)[0],
+        )
+        print(f"[semantic] tokens={analysis.tokens} "
+              f"splits={analysis.splits} "
+              f"themes={analysis.themes} "
+              f"dominant={analysis.dominant_themes} "
+              f"energy={analysis.energy} calmness={analysis.calmness} "
+              f"warmth={analysis.warmth} "
+              f"related={analysis.related_tags[:6]}")
+        # Title: try semantic generator first; fall back to clean_title
+        # (which itself falls back to the title pool) if the analysis
+        # couldn't resolve any dominant theme.
+        if analysis.dominant_themes:
+            title = semantic_mod.generate_title(analysis, seed=real_name)
+        else:
+            title = captions.clean_title(real_name, fallback_pool=title_pool)
+            print(f"[caption] no semantic theme detected; using clean_title -> '{title}'")
+        # Hashtags: filename tags + synonym expansion + pool fill.
+        primary_with_synonyms = semantic_mod.expanded_hashtags(
+            analysis, filename_hashtags, max_extra=4,
+        )
         tags = captions.sample_hashtags(
             pool, cfg.hashtags_per_post_min, cfg.hashtags_per_post_max,
-            primary=filename_hashtags,
+            primary=primary_with_synonyms,
         )
         print(f"[caption] title='{title}' "
               f"filename_hashtags={filename_hashtags} "
               f"filename_keywords={filename_keywords} "
+              f"semantic_extras={primary_with_synonyms[len(filename_hashtags):]} "
               f"final_tags={tags} "
               f"(hashtag_pool={len(pool)} title_pool={len(title_pool)})")
 
@@ -164,6 +189,8 @@ def run() -> int:
                 video_path=raw,
                 hashtags=filename_hashtags,
                 keywords=filename_keywords,
+                semantic_tokens=analysis.tokens,
+                semantic_energy=analysis.energy,
             )
             mp = os.path.join(tmp, "music.mp3")
             try:
@@ -177,6 +204,7 @@ def run() -> int:
                 audit["match_profile"] = profile.to_dict()
                 audit["match_score"] = round(match_score, 2)
                 audit["match_reasons"] = match_reasons
+                audit["semantic_analysis"] = analysis.to_dict()
                 music_track_audit = audit
             except music_mod.MusicUnavailable as e:
                 if music_strict:
