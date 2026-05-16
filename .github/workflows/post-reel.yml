@@ -47,8 +47,10 @@ jobs:
       TIMEZONE:        ${{ vars.TIMEZONE || 'Asia/Dhaka' }}
       POSTS_PER_DAY_MIN: ${{ vars.POSTS_PER_DAY_MIN || '7' }}
       POSTS_PER_DAY_MAX: ${{ vars.POSTS_PER_DAY_MAX || '10' }}
-      WINDOW_START_HOUR: ${{ vars.WINDOW_START_HOUR || '8' }}
-      WINDOW_END_HOUR:   ${{ vars.WINDOW_END_HOUR || '23' }}
+      # Full 24h posting window for maximum humanization / unpredictability.
+      # Slots are still randomized per day, with >=60min min gap enforced.
+      WINDOW_START_HOUR: ${{ vars.WINDOW_START_HOUR || '0' }}
+      WINDOW_END_HOUR:   ${{ vars.WINDOW_END_HOUR || '24' }}
       SLOT_TOLERANCE_MINUTES: ${{ vars.SLOT_TOLERANCE_MINUTES || '25' }}
       HASHTAGS_PER_POST_MIN: ${{ vars.HASHTAGS_PER_POST_MIN || '8' }}
       HASHTAGS_PER_POST_MAX: ${{ vars.HASHTAGS_PER_POST_MAX || '12' }}
