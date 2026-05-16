@@ -178,21 +178,27 @@ def check_watermark_font(cfg) -> None:
 
 
 def check_jamendo() -> None:
-    """If JAMENDO_CLIENT_ID is set, verify the API responds and at least
-    one commercial-OK track exists for the configured tags. This catches
-    a bad client id or a Jamendo outage *before* we burn a post attempt.
+    """Connectivity + credentials check ONLY. The actual track is chosen
+    per-video by ``music_match.build_profile`` + ``fetch_best_music_for_video``
+    after the source filename's hashtags + keywords have been semantically
+    analyzed \u2014 this preflight does NOT pre-select any music.
+
+    We just verify:
+      * ``JAMENDO_CLIENT_ID`` works against the API.
+      * At least one commercial-OK (CC0/CC-BY) track is reachable.
+
+    The probe uses a deliberately-broad tag ladder; it is unrelated to
+    what the per-video matcher will actually search for at runtime.
     """
     client_id = os.environ.get("JAMENDO_CLIENT_ID", "").strip()
     if not client_id:
         _info("Music (Jamendo)", "JAMENDO_CLIENT_ID not set — music replacement disabled")
         return
-    tags = os.environ.get(
-        "MUSIC_TAGS", "ambient,chill,cinematic,instrumental,calm,nature",
-    )
+    print("[music] preflight = connectivity probe only "
+          "(real per-video selection happens in main.py after semantic analysis)")
+    # Probe ladder: broad-but-likely-to-hit. Not used for actual music pick.
+    stages = ["instrumental,ambient", "ambient", ""]
     from . import music as music_mod
-    # Try the same fallback ladder as the real fetch: primary tags ->
-    # broad fallback -> no tags. Preflight passes if ANY stage yields >=1.
-    stages = [tags, "instrumental,ambient", ""]
     tracks = []
     matched_stage = None
     for stg in stages:
@@ -205,12 +211,13 @@ def check_jamendo() -> None:
             break
     if not tracks:
         _fail("Music (Jamendo)",
-              f"no commercial-OK (CC0/CC-BY) tracks found in any fallback "
-              f"stage. Check client id permissions or relax MUSIC_TAGS.")
+              "no commercial-OK (CC0/CC-BY) tracks reachable from any "
+              "probe stage. Check client id permissions or Jamendo status.")
     sample = tracks[0]
     _ok("Music (Jamendo)",
-        f"client_id ok, {len(tracks)} commercial-OK tracks "
-        f"(matched stage: {matched_stage!r}); e.g. '{sample.name}' by "
+        f"connectivity ok ({len(tracks)} commercial-OK tracks reachable via "
+        f"probe stage {matched_stage!r}); per-video matcher will choose the "
+        f"actual track later. Sample: '{sample.name}' by "
         f"{sample.artist} [{sample.license_short}]")
 
 
