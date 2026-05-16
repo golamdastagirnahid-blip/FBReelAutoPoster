@@ -21,13 +21,45 @@ def _ensure_dir() -> None:
 
 
 def load_posted() -> dict[str, Any]:
+    """Load the dedup ledger. If the file is missing return ``{}``.
+
+    If the file exists but is corrupt (truncated JSON, wrong type, OS
+    error), we **never silently return an empty dict** \u2014 doing so would
+    cause every previously-posted video to be re-uploaded as a duplicate.
+    Instead we:
+      1. Rename the corrupt file to ``posted.json.corrupt-<utcstamp>`` so
+         it is preserved for manual recovery.
+      2. Raise ``StateCorruptError`` so the caller (main / healthcheck)
+         can fail loudly rather than silently nuking the dedup state.
+    """
     if not os.path.exists(POSTED_PATH):
         return {}
     try:
         with open(POSTED_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (json.JSONDecodeError, OSError):
-        return {}
+            data = json.load(f)
+    except (json.JSONDecodeError, OSError) as e:
+        backup = POSTED_PATH + ".corrupt-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        try:
+            os.replace(POSTED_PATH, backup)
+            print(f"[state] WARN: posted.json corrupt ({e}); preserved as {backup}")
+        except OSError as backup_err:
+            print(f"[state] WARN: posted.json corrupt and could not be backed up: {backup_err}")
+        raise StateCorruptError(
+            f"posted.json corrupt: {e}. Backed up to {backup}. Refusing to "
+            f"continue with empty dedup state to prevent mass re-posting."
+        ) from e
+    if not isinstance(data, dict):
+        backup = POSTED_PATH + ".corrupt-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        os.replace(POSTED_PATH, backup)
+        raise StateCorruptError(
+            f"posted.json is not a JSON object (got {type(data).__name__}). "
+            f"Backed up to {backup}."
+        )
+    return data
+
+
+class StateCorruptError(RuntimeError):
+    """Raised when the persisted state file is unreadable / wrong shape."""
 
 
 def save_posted(data: dict[str, Any]) -> None:
