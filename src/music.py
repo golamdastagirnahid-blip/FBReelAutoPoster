@@ -23,8 +23,11 @@ import os
 import random
 import subprocess
 import time
-from dataclasses import dataclass
-from typing import Any
+from dataclasses import dataclass, field
+from typing import Any, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .music_match import MusicProfile
 
 import requests
 
@@ -65,6 +68,12 @@ class Track:
     license_url: str
     audio_url: str
     duration: int  # seconds
+    # Extra Jamendo metadata used by the matcher (filled when present).
+    vartags: list[str] = field(default_factory=list)
+    musicinfo_tags: list[str] = field(default_factory=list)
+    bpm: float | None = None
+    speed: str = ""
+    vocal_instrumental: str = ""  # "instrumental" | "vocal" | ""
 
     @property
     def license_short(self) -> str:
@@ -88,6 +97,11 @@ class Track:
             "license_url": self.license_url,
             "audio_url": self.audio_url,
             "duration": self.duration,
+            "bpm": self.bpm,
+            "speed": self.speed,
+            "vocal_instrumental": self.vocal_instrumental,
+            "vartags": self.vartags,
+            "musicinfo_tags": self.musicinfo_tags,
             "attribution": self.attribution(),
         }
 
@@ -175,6 +189,14 @@ def search_tracks(
         audio_url = t.get("audio") or t.get("audiodownload")
         if not audio_url:
             continue
+        mi = t.get("musicinfo") or {}
+        mi_tags = mi.get("tags") or {}
+        vartags = list(mi_tags.get("vartags") or [])
+        info_tags = list(mi_tags.get("genres") or []) + list(mi_tags.get("instruments") or [])
+        try:
+            bpm_val = float(mi.get("bpm")) if mi.get("bpm") else None
+        except (TypeError, ValueError):
+            bpm_val = None
         out.append(Track(
             id=str(t.get("id", "")),
             name=t.get("name", "Untitled"),
@@ -182,6 +204,11 @@ def search_tracks(
             license_url=license_url,
             audio_url=audio_url,
             duration=int(t.get("duration", 0)),
+            vartags=vartags,
+            musicinfo_tags=info_tags,
+            bpm=bpm_val,
+            speed=str(mi.get("speed") or ""),
+            vocal_instrumental=str(mi.get("vocalinstrumental") or ""),
         ))
     print(
         f"[music] search tags={tags!r}: total={len(results)} "
@@ -280,6 +307,178 @@ def download_track(track: Track, dst_path: str) -> str:
 class MusicUnavailable(RuntimeError):
     """Raised when no commercial-OK music can be obtained. Caller decides
     whether to fail the post (strict mode) or continue (degraded mode)."""
+
+
+# ---------------------------------------------------------------------------
+# Multi-criteria scoring of candidate tracks against a MusicProfile.
+# Higher score = better match.
+# ---------------------------------------------------------------------------
+def score_track(track: Track, profile: "MusicProfile",
+                video_duration: float = 0.0) -> tuple[float, list[str]]:
+    """Return ``(score, reasons)`` for how well ``track`` matches ``profile``.
+
+    Scoring weights (tuned for natural sounding picks):
+      +6 per matching vartag (Jamendo curated mood)
+      +2 per matching genre/instrument tag
+      +4 if speed bucket matches
+      +3 if BPM falls in the energy-derived target range
+      +3 if instrumental (no competing vocals)
+      -5 if vocal
+      +2 if duration >= video_duration (no audible loop needed)
+      -1 if duration < 0.7 * video_duration (heavy looping)
+    """
+    score = 0.0
+    reasons: list[str] = []
+
+    # vartag overlap
+    p_var = set(profile.vartags)
+    t_var = set(track.vartags)
+    var_hits = p_var & t_var
+    if var_hits:
+        score += 6 * len(var_hits)
+        reasons.append(f"vartags+{len(var_hits)}({','.join(sorted(var_hits))})")
+
+    # genre/instrument overlap (loose: case-insensitive substring)
+    t_info = {x.lower() for x in track.musicinfo_tags}
+    genre_hits = {g for g in profile.genre_tags if g.lower() in t_info}
+    if genre_hits:
+        score += 2 * len(genre_hits)
+        reasons.append(f"genres+{len(genre_hits)}({','.join(sorted(genre_hits))})")
+
+    # speed
+    if track.speed and track.speed in profile.speed:
+        score += 4
+        reasons.append(f"speed={track.speed}")
+
+    # BPM target from energy
+    if track.bpm:
+        bpm_min, bpm_max = _bpm_window_for_energy(profile.energy)
+        if bpm_min <= track.bpm <= bpm_max:
+            score += 3
+            reasons.append(f"bpm={track.bpm:.0f} in [{bpm_min},{bpm_max}]")
+
+    # instrumental vs vocal
+    vi = track.vocal_instrumental.lower()
+    if vi == "instrumental":
+        score += 3
+        reasons.append("instrumental")
+    elif vi == "vocal":
+        score -= 5
+        reasons.append("vocal-penalty")
+
+    # duration fit
+    if video_duration > 0 and track.duration > 0:
+        if track.duration >= video_duration:
+            score += 2
+            reasons.append("dur>=video")
+        elif track.duration < 0.7 * video_duration:
+            score -= 1
+            reasons.append("dur<<video")
+
+    return score, reasons
+
+
+def _bpm_window_for_energy(energy: float) -> tuple[int, int]:
+    """Map normalized scene energy (0..1) to a plausible BPM window."""
+    if energy < 0.25:
+        return 50, 80
+    if energy < 0.45:
+        return 65, 95
+    if energy < 0.65:
+        return 85, 115
+    if energy < 0.85:
+        return 105, 135
+    return 125, 175
+
+
+def fetch_best_music_for_video(
+    client_id: str,
+    profile: "MusicProfile",
+    dst_path: str,
+    *,
+    seed: str | None = None,
+    video_duration: float = 0.0,
+    top_n_consider: int = 12,
+) -> tuple[Track, float, list[str]]:
+    """Profile-aware producer pick:
+      1. Search with ``profile.primary_fuzzytags()``.
+      2. Score every commercial-OK candidate.
+      3. Try fallback tags + no-tag broad if not enough candidates.
+      4. Download the highest-scored track that downloads cleanly.
+         If the top pick fails to download, fall back to the next-best.
+
+    Returns (track, score, reasons). Raises ``MusicUnavailable`` if no
+    candidate downloads cleanly across all attempts.
+    """
+    import random as _random
+
+    # Build search ladder
+    ladder: list[str] = []
+    seen: set[str] = set()
+
+    def _add(t: str) -> None:
+        k = t.strip().lower()
+        if k not in seen:
+            seen.add(k)
+            ladder.append(t)
+
+    _add(profile.primary_fuzzytags())
+    _add(profile.fallback_fuzzytags())
+    for g in profile.genre_tags:
+        _add(g)
+    _add("instrumental,ambient")
+    _add("")  # broad popularity
+
+    # Collect candidates across stages until we have a healthy pool.
+    candidates: list[Track] = []
+    seen_ids: set[str] = set()
+    stage_used: str = ""
+    for stage in ladder:
+        try:
+            tracks = search_tracks(client_id, stage)
+        except Exception as e:  # noqa: BLE001
+            print(f"[music] search stage {stage!r} failed: {e}")
+            continue
+        for tr in tracks:
+            if tr.id and tr.id not in seen_ids:
+                seen_ids.add(tr.id)
+                candidates.append(tr)
+        if len(candidates) >= top_n_consider:
+            stage_used = stage or "<no-tags broad>"
+            break
+        if tracks:
+            stage_used = stage or "<no-tags broad>"
+
+    if not candidates:
+        raise MusicUnavailable("no commercial-OK candidates across any stage")
+
+    # Score and rank
+    scored: list[tuple[float, list[str], Track]] = []
+    for tr in candidates:
+        score, reasons = score_track(tr, profile, video_duration)
+        # Deterministic per-video tiebreak so reruns pick the same track.
+        if seed:
+            score += 0.0001 * _random.Random(f"{seed}|{tr.id}").random()
+        scored.append((score, reasons, tr))
+    scored.sort(key=lambda x: x[0], reverse=True)
+
+    print(f"[music] scored {len(scored)} candidates (top stage used: {stage_used!r})")
+    for i, (sc, rs, tr) in enumerate(scored[:5]):
+        print(f"[music]   #{i+1} score={sc:.2f} id={tr.id} '{tr.name}' by "
+              f"{tr.artist} [{tr.license_short}] reasons={rs}")
+
+    last_err: str = ""
+    for sc, rs, tr in scored:
+        try:
+            download_track(tr, dst_path)
+        except Exception as e:  # noqa: BLE001
+            last_err = f"download failed for top pick id={tr.id}: {e}"
+            print(f"[music] {last_err} — trying next candidate")
+            continue
+        print(f"[music] selected id={tr.id} '{tr.name}' by {tr.artist} "
+              f"license={tr.license_short} score={sc:.2f} reasons={rs}")
+        return tr, sc, rs
+    raise MusicUnavailable(last_err or "all candidates failed to download")
 
 
 def fetch_music_for_video(

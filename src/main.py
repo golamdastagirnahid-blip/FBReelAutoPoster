@@ -142,18 +142,31 @@ def run() -> int:
         music_strict = os.environ.get("MUSIC_STRICT", "true").strip().lower() in ("1", "true", "yes")
         if jamendo_id and music_mode != "off":
             from . import music as music_mod
-            tags_env = os.environ.get(
-                "MUSIC_TAGS",
-                "ambient,chill,cinematic,instrumental,calm,nature",
+            from . import music_match
+            # Probe video duration once so the matcher can score
+            # duration-fit and the audio chain can cleanly trim/fade.
+            from .enhance import _probe_duration  # noqa: PLC2701
+            video_duration = _probe_duration(raw)
+            # Build a producer-level profile: keyword analysis +
+            # frame-level brightness/saturation/warmth -> mood/genre/speed.
+            profile = music_match.build_profile(
+                filename=real_name,
+                title=title,
+                video_path=raw,
             )
             mp = os.path.join(tmp, "music.mp3")
             try:
-                track = music_mod.fetch_music_for_video(
-                    jamendo_id, tags_env, mp, seed=real_name,
+                track, match_score, match_reasons = music_mod.fetch_best_music_for_video(
+                    jamendo_id, profile, mp,
+                    seed=real_name, video_duration=video_duration,
                 )
                 music_path = mp
                 music_attribution = track.attribution()
-                music_track_audit = track.to_dict()
+                audit = track.to_dict()
+                audit["match_profile"] = profile.to_dict()
+                audit["match_score"] = round(match_score, 2)
+                audit["match_reasons"] = match_reasons
+                music_track_audit = audit
             except music_mod.MusicUnavailable as e:
                 if music_strict:
                     raise RuntimeError(
