@@ -1,0 +1,83 @@
+name: Reel Health Check
+
+on:
+  schedule:
+    # Once per day at 03:13 UTC (~09:13 Asia/Dhaka). Late enough that
+    # FB has finished processing every reel posted the previous day.
+    - cron: "13 3 * * *"
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: "How many days back to check"
+        type: string
+        default: "7"
+
+permissions:
+  contents: write   # to commit state/health_report.md back to the repo
+
+concurrency:
+  group: reel-health-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      FB_PAGE_ID:     ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN:  ${{ secrets.FB_PAGE_TOKEN }}
+      FB_API_VERSION: ${{ vars.FB_API_VERSION || 'v21.0' }}
+      # Drive vars are required by load_config() even though we don't hit Drive here.
+      DRIVE_FOLDER_ID:           ${{ secrets.DRIVE_FOLDER_ID }}
+      DRIVE_ARCHIVE_FOLDER_ID:   ${{ secrets.DRIVE_ARCHIVE_FOLDER_ID }}
+      DRIVE_OAUTH_REFRESH_TOKEN: ${{ secrets.DRIVE_OAUTH_REFRESH_TOKEN }}
+      DRIVE_OAUTH_CLIENT_ID:     ${{ secrets.DRIVE_OAUTH_CLIENT_ID }}
+      DRIVE_OAUTH_CLIENT_SECRET: ${{ secrets.DRIVE_OAUTH_CLIENT_SECRET }}
+      TIMEZONE:           ${{ vars.TIMEZONE || 'Asia/Dhaka' }}
+      HEALTH_LOOKBACK_DAYS: ${{ inputs.lookback_days || '7' }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Run health check
+        run: python -m src.healthcheck
+
+      - name: Commit health report
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain state/health_report.md)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state/health_report.md
+            git commit -m "chore(health): update reel health report [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+              if git push origin HEAD:"${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+              sleep 3
+            done
+            echo "Failed to push health report after retries" >&2
+            exit 1
+          else
+            echo "No health report changes."
+          fi
+
+      - name: Show report in summary
+        if: always()
+        run: |
+          if [ -f state/health_report.md ]; then
+            cat state/health_report.md >> $GITHUB_STEP_SUMMARY
+          fi

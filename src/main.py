@@ -149,12 +149,13 @@ def run() -> int:
                 print(f"[humanize] sleeping {jitter}s before publish to vary post timing")
                 time.sleep(jitter)
 
+        fb_post_id = None
+        fb_video_id = None
         if cfg.dry_run:
             print("[dry-run] would publish reel; caption follows:")
             print("---")
             print(caption)
             print("---")
-            fb_post_id = None
         else:
             result = fb.publish_reel(
                 page_id=cfg.fb_page_id,
@@ -167,6 +168,7 @@ def run() -> int:
             )
             print(f"[facebook] published: {result}")
             fb_post_id = result.get("post_id") or result.get("video_id")
+            fb_video_id = result.get("video_id")
 
     # Archive (move source -> archive folder) ONLY after a real publish.
     archived = False
@@ -192,6 +194,7 @@ def run() -> int:
 
     state.mark_posted(
         chosen["id"], chosen["name"], fb_post_id,
+        fb_video_id=fb_video_id if not cfg.dry_run else None,
     )
     if due is not None:
         scheduler.mark_slot_done(date_str, sched, due.slot_time)

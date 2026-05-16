@@ -38,11 +38,17 @@ def save_posted(data: dict[str, Any]) -> None:
     os.replace(tmp, POSTED_PATH)
 
 
-def mark_posted(file_id: str, name: str, fb_post_id: str | None) -> None:
+def mark_posted(
+    file_id: str,
+    name: str,
+    fb_post_id: str | None,
+    fb_video_id: str | None = None,
+) -> None:
     data = load_posted()
     data[file_id] = {
         "name": name,
         "fb_post_id": fb_post_id,
+        "fb_video_id": fb_video_id,
         "posted_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     save_posted(data)
