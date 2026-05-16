@@ -411,9 +411,11 @@ _TEMPLATES_PAIRED: dict[tuple[str, ...], list[str]] = {
         "{b} that quietly hold your {a} {emoji}",
     ],
     ("emotion", "wildlife"): [
-        "{a} {b} — they will steal your heart {emoji}",
-        "These {b} will melt your heart {emoji}",
-        "Watch these {a} little {b} {emoji}",
+        "Tiny {b} family \u2014 they will steal your heart {emoji}",
+        "This {a} {b} family will melt your heart {emoji}",
+        "Watch this {a} little {b} {emoji}",
+        "A {b}'s tiny world full of {a} {emoji}",
+        "{a} moments with this little {b} {emoji}",
     ],
     ("water", "winter"): [
         "Frozen {a} — {b} in stillness {emoji}",
