@@ -58,23 +58,39 @@ def _fail(label: str, detail: str) -> None:
 
 
 def check_fb(page_id: str, token: str, api_version: str) -> None:
-    """Hit /me with the token and confirm it belongs to ``page_id``."""
+    """Confirm the token can read the target Page directly.
+
+    We query ``/{page_id}`` (not ``/me``) because System User tokens resolve
+    ``/me`` to the System User (which has no Page-only fields like
+    ``category``). Hitting the page id directly works for both Page tokens
+    and System User tokens that have the page assigned.
+    """
     r = requests.get(
-        f"{GRAPH}/{api_version}/me",
-        params={"fields": "id,name,category", "access_token": token},
+        f"{GRAPH}/{api_version}/{page_id}",
+        params={"fields": "id,name,category,fan_count", "access_token": token},
         timeout=20,
     )
     if not r.ok:
-        _fail("FB token", f"GET /me failed: {r.status_code} {r.text[:300]}")
-    me = r.json()
-    if str(me.get("id")) != str(page_id):
+        # Retry without fields that might be unavailable on some accounts
+        r = requests.get(
+            f"{GRAPH}/{api_version}/{page_id}",
+            params={"fields": "id,name", "access_token": token},
+            timeout=20,
+        )
+    if not r.ok:
+        _fail("FB token", f"GET /{page_id} failed: {r.status_code} {r.text[:300]}")
+    pg = r.json()
+    if str(pg.get("id")) != str(page_id):
         _fail(
             "FB token",
-            f"token belongs to id={me.get('id')} ({me.get('name')!r}) but "
-            f"FB_PAGE_ID is {page_id}. Make sure FB_PAGE_TOKEN is a *Page* "
-            f"access token for this page (not a user token).",
+            f"unexpected response id={pg.get('id')} for FB_PAGE_ID={page_id}",
         )
-    _ok("FB Page token", f"page='{me.get('name')}' id={me.get('id')} category={me.get('category')}")
+    _ok(
+        "FB Page token",
+        f"page='{pg.get('name')}' id={pg.get('id')}"
+        + (f" category={pg.get('category')}" if pg.get("category") else "")
+        + (f" fans={pg.get('fan_count')}" if pg.get("fan_count") else ""),
+    )
 
     # Also check publish_video permission via /me/permissions (best-effort)
     try:
