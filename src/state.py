@@ -43,14 +43,25 @@ def mark_posted(
     name: str,
     fb_post_id: str | None,
     fb_video_id: str | None = None,
+    music_track: dict | None = None,
+    caption: str | None = None,
 ) -> None:
+    """Record a successful publish. ``music_track`` (if set) is the dict
+    from ``music.Track.to_dict()`` and forms the per-post audit trail
+    required for monetization / license disputes (which CC track, who,
+    license URL, etc.)."""
     data = load_posted()
-    data[file_id] = {
+    entry: dict[str, Any] = {
         "name": name,
         "fb_post_id": fb_post_id,
         "fb_video_id": fb_video_id,
         "posted_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    if music_track is not None:
+        entry["music_track"] = music_track
+    if caption is not None:
+        entry["caption"] = caption
+    data[file_id] = entry
     save_posted(data)
 
 

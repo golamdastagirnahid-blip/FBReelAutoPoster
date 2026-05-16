@@ -177,6 +177,33 @@ def check_watermark_font(cfg) -> None:
     _ok("Watermark", f"text='{cfg.watermark_text}' font={font}")
 
 
+def check_jamendo() -> None:
+    """If JAMENDO_CLIENT_ID is set, verify the API responds and at least
+    one commercial-OK track exists for the configured tags. This catches
+    a bad client id or a Jamendo outage *before* we burn a post attempt.
+    """
+    client_id = os.environ.get("JAMENDO_CLIENT_ID", "").strip()
+    if not client_id:
+        _info("Music (Jamendo)", "JAMENDO_CLIENT_ID not set — music replacement disabled")
+        return
+    tags = os.environ.get(
+        "MUSIC_TAGS", "ambient,chill,cinematic,instrumental,calm,nature",
+    )
+    try:
+        from . import music as music_mod
+        tracks = music_mod.search_tracks(client_id, tags, limit=10)
+    except Exception as e:  # noqa: BLE001
+        _fail("Music (Jamendo)", f"search failed: {e}")
+    if not tracks:
+        _fail("Music (Jamendo)",
+              f"no commercial-OK (CC0/CC-BY) tracks for tags={tags!r}; "
+              f"broaden MUSIC_TAGS or check client id")
+    sample = tracks[0]
+    _ok("Music (Jamendo)",
+        f"client_id ok, {len(tracks)} commercial-OK tracks for tags={tags!r} "
+        f"(e.g. '{sample.name}' by {sample.artist} [{sample.license_short}])")
+
+
 def check_filter_style(cfg) -> None:
     from .enhance import FILTER_PRESETS  # noqa: PLC2701
     valid = {"random", *FILTER_PRESETS}
@@ -219,6 +246,7 @@ def run(quiet: bool = False) -> int:
         check_drive(cfg)
         check_watermark_font(cfg)
         check_filter_style(cfg)
+        check_jamendo()
     except PreflightError as e:
         print(f"\n  [FAIL] {e}", file=sys.stderr)
         return 1

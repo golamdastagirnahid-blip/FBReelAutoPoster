@@ -132,6 +132,25 @@ def _default_font() -> str:
     return DEFAULT_FONT_LINUX if os.name == "posix" else DEFAULT_FONT_WIN
 
 
+def _probe_duration(path: str) -> float:
+    """Return media duration in seconds via ffprobe. Returns 0.0 if unknown
+    (caller falls back to fade-less mix). Never raises."""
+    try:
+        r = subprocess.run(
+            [
+                "ffprobe", "-v", "error",
+                "-show_entries", "format=duration",
+                "-of", "default=nw=1:nk=1", path,
+            ],
+            capture_output=True, text=True, timeout=15,
+        )
+        if r.returncode == 0:
+            return float(r.stdout.strip() or 0.0)
+    except (subprocess.TimeoutExpired, FileNotFoundError, ValueError):
+        pass
+    return 0.0
+
+
 def _stealth_params(seed_str: str) -> dict:
     """Return per-video randomized stealth parameters.
 
@@ -271,11 +290,33 @@ def enhance(
         # from two sources in one pass.
         base_cmd += ["-stream_loop", "-1", "-i", music_path]
 
+        # Professional fade-in/out on the music track so the soundtrack
+        # never starts or ends abruptly. Fade durations are short enough
+        # to feel natural (similar to FB's built-in music composer).
+        fade_in = 1.5
+        fade_out = 2.5
+        video_duration = _probe_duration(src)
+        # Trim music to video length, then fade in at 0, fade out at the tail.
+        if video_duration > (fade_in + fade_out + 1.0):
+            fade_out_start = max(0.0, video_duration - fade_out)
+            music_chain = (
+                f"[1:a]aresample=44100,volume={music_volume:.3f},"
+                f"atrim=duration={video_duration:.3f},"
+                f"afade=t=in:st=0:d={fade_in:.2f},"
+                f"afade=t=out:st={fade_out_start:.3f}:d={fade_out:.2f}[mus]"
+            )
+        else:
+            # Very short video or duration unknown: skip fades to avoid
+            # silencing the whole track.
+            music_chain = (
+                f"[1:a]aresample=44100,volume={music_volume:.3f}[mus]"
+            )
+
         if music_mix == "full":
             # Drop original audio entirely; use only the music track.
             filter_complex = (
                 f"[0:v]{vf_chain}[vout];"
-                f"[1:a]volume={music_volume:.3f},aresample=44100[mus];"
+                f"{music_chain};"
                 f"[mus]{AUDIO_FILTER}[aout]"
             )
         else:
@@ -284,7 +325,7 @@ def enhance(
                 f"[0:v]{vf_chain}[vout];"
                 f"[0:a]asetrate=44100*{pitch:.4f},aresample=44100,"
                 f"atempo={1/pitch:.4f},volume={original_duck_volume:.3f}[orig];"
-                f"[1:a]volume={music_volume:.3f},aresample=44100[mus];"
+                f"{music_chain};"
                 f"[orig][mus]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[mix];"
                 f"[mix]{AUDIO_FILTER}[aout]"
             )

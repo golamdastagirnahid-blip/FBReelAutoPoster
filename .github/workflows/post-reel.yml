@@ -72,6 +72,10 @@ jobs:
       # MUSIC_REPLACE_MODE: 'duck' (mix orig at -15dB under music) | 'full' (only music) | 'off'
       MUSIC_REPLACE_MODE:  ${{ vars.MUSIC_REPLACE_MODE || 'duck' }}
       MUSIC_TAGS:          ${{ vars.MUSIC_TAGS || 'ambient,chill,cinematic,instrumental,calm,nature' }}
+      # Strict mode: fail the post if licensed music can't be fetched (prevents
+      # silently publishing potentially-copyrighted original audio). Set false
+      # only if you've accepted that risk.
+      MUSIC_STRICT:        ${{ vars.MUSIC_STRICT || 'true' }}
       DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
       # FORCE_POST: skip scheduler & post immediately. Only set on manual runs.
       FORCE_POST: ${{ github.event_name == 'workflow_dispatch' && inputs.force_post && 'true' || 'false' }}

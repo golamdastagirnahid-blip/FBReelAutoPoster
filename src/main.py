@@ -130,13 +130,16 @@ def run() -> int:
         print(f"[caption] title='{title}' tags={tags} "
               f"(hashtag_pool={len(pool)} title_pool={len(title_pool)})")
 
-        # Fetch a commercial-OK royalty-free music track (Jamendo) if a
-        # client id is configured. We always replace audio so every reel
-        # is monetization-safe and avoids copyright mute/block.
+        # ---- Royalty-free music (Jamendo, commercial-OK CC0/CC-BY) -----
+        # Strict mode: if music is configured but cannot be obtained, we
+        # FAIL the post rather than silently publish potentially-copyrighted
+        # original audio. Set MUSIC_STRICT=false to allow degraded posts.
         music_path = ""
         music_attribution = ""
+        music_track_audit: dict | None = None
         jamendo_id = os.environ.get("JAMENDO_CLIENT_ID", "").strip()
         music_mode = os.environ.get("MUSIC_REPLACE_MODE", "duck").strip().lower()
+        music_strict = os.environ.get("MUSIC_STRICT", "true").strip().lower() in ("1", "true", "yes")
         if jamendo_id and music_mode != "off":
             from . import music as music_mod
             tags_env = os.environ.get(
@@ -144,12 +147,21 @@ def run() -> int:
                 "ambient,chill,cinematic,instrumental,calm,nature",
             )
             mp = os.path.join(tmp, "music.mp3")
-            track = music_mod.fetch_music_for_video(
-                jamendo_id, tags_env, mp, seed=real_name,
-            )
-            if track is not None:
+            try:
+                track = music_mod.fetch_music_for_video(
+                    jamendo_id, tags_env, mp, seed=real_name,
+                )
                 music_path = mp
                 music_attribution = track.attribution()
+                music_track_audit = track.to_dict()
+            except music_mod.MusicUnavailable as e:
+                if music_strict:
+                    raise RuntimeError(
+                        f"[music] strict mode: cannot proceed without licensed "
+                        f"audio ({e}). Set MUSIC_STRICT=false to allow degraded "
+                        f"posts with original audio."
+                    ) from e
+                print(f"[music] WARN: degraded mode — posting with original audio: {e}")
 
         enhanced = os.path.join(tmp, "enhanced.mp4")
         enh.enhance(
@@ -164,7 +176,13 @@ def run() -> int:
 
         caption = captions.build_caption(title, tags)
         if music_attribution:
-            caption = f"{caption}\n\n🎵 {music_attribution}"
+            # FB caption limit is 2200 chars; reserve a few for the
+            # attribution + emoji + newlines.
+            FB_CAPTION_MAX = 2200
+            suffix = f"\n\n🎵 {music_attribution}"
+            if len(caption) + len(suffix) > FB_CAPTION_MAX:
+                caption = caption[: FB_CAPTION_MAX - len(suffix) - 3] + "..."
+            caption = caption + suffix
 
         # Humanization jitter (auto/cron runs only). For manual runs we
         # post immediately, no waiting.
@@ -220,6 +238,8 @@ def run() -> int:
     state.mark_posted(
         chosen["id"], chosen["name"], fb_post_id,
         fb_video_id=fb_video_id if not cfg.dry_run else None,
+        music_track=music_track_audit if not cfg.dry_run else None,
+        caption=caption if not cfg.dry_run else None,
     )
     if due is not None:
         scheduler.mark_slot_done(date_str, sched, due.slot_time)
