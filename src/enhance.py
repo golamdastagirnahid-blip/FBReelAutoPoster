@@ -167,6 +167,10 @@ def enhance(
     watermark_text: str = "",
     filter_style: str = "random",
     font_file: str = "",
+    music_path: str = "",
+    music_mix: str = "duck",   # "duck" | "full" | "off"
+    music_volume: float = 0.95,
+    original_duck_volume: float = 0.18,
 ) -> str:
     """Stealth-grade FFmpeg pipeline that defeats FB's perceptual-hash,
     audio-fingerprint, and 3rd-party-watermark detectors.
@@ -243,37 +247,79 @@ def enhance(
         else:
             print(f"[enhance] WARN: font not found at {font}; skipping watermark")
 
-    vf = ",".join(parts)
+    vf_chain = ",".join(parts)
 
-    # --- Audio filter chain ----------------------------------------------
-    # asetrate shifts pitch + speed; atempo brings duration back to ~1x.
+    # --- Audio chain ------------------------------------------------------
     pitch = sp["audio_pitch"]
-    af = (
-        f"asetrate=44100*{pitch:.4f},"
-        f"aresample=44100,"
-        f"atempo={1/pitch:.4f},"
-        f"{AUDIO_FILTER}"
-    )
+    have_music = bool(music_path) and os.path.exists(music_path) and music_mix != "off"
+    music_mode = music_mix if have_music else "none"
 
     print(
         f"[enhance] style={style_name} watermark={'on' if wm_used else 'off'} "
         f"crop={sp['crop_pct']*100:.1f}% rot={sp['rotate_deg']:.2f}deg "
         f"zoom={sp['zoom']:.3f} fps={sp['fps']} crf={sp['crf']} "
-        f"pitch={pitch:.3f}"
+        f"pitch={pitch:.3f} music={music_mode}"
     )
 
-    cmd = [
+    base_cmd = [
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
         "-i", src,
-        "-vf", vf,
-        "-af", af,
-        "-map_metadata", "-1",                       # strip source metadata
-        "-c:v", "libx264", "-profile:v", "high", "-preset", "medium",
-        "-crf", str(sp["crf"]), "-pix_fmt", "yuv420p",
-        "-g", str(sp["gop"]),
-        "-c:a", "aac", "-b:a", "160k", "-ar", "44100",
-        "-movflags", "+faststart",
-        dst,
     ]
+
+    if have_music:
+        # We use filter_complex so we can both video-filter and mix audio
+        # from two sources in one pass.
+        base_cmd += ["-stream_loop", "-1", "-i", music_path]
+
+        if music_mix == "full":
+            # Drop original audio entirely; use only the music track.
+            filter_complex = (
+                f"[0:v]{vf_chain}[vout];"
+                f"[1:a]volume={music_volume:.3f},aresample=44100[mus];"
+                f"[mus]{AUDIO_FILTER}[aout]"
+            )
+        else:
+            # duck-mix: keep original ambience faintly under the music
+            filter_complex = (
+                f"[0:v]{vf_chain}[vout];"
+                f"[0:a]asetrate=44100*{pitch:.4f},aresample=44100,"
+                f"atempo={1/pitch:.4f},volume={original_duck_volume:.3f}[orig];"
+                f"[1:a]volume={music_volume:.3f},aresample=44100[mus];"
+                f"[orig][mus]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[mix];"
+                f"[mix]{AUDIO_FILTER}[aout]"
+            )
+
+        cmd = base_cmd + [
+            "-filter_complex", filter_complex,
+            "-map", "[vout]", "-map", "[aout]",
+            "-shortest",
+            "-map_metadata", "-1",
+            "-c:v", "libx264", "-profile:v", "high", "-preset", "medium",
+            "-crf", str(sp["crf"]), "-pix_fmt", "yuv420p",
+            "-g", str(sp["gop"]),
+            "-c:a", "aac", "-b:a", "160k", "-ar", "44100",
+            "-movflags", "+faststart",
+            dst,
+        ]
+    else:
+        # Legacy single-input path (no music): use -vf / -af.
+        af = (
+            f"asetrate=44100*{pitch:.4f},"
+            f"aresample=44100,"
+            f"atempo={1/pitch:.4f},"
+            f"{AUDIO_FILTER}"
+        )
+        cmd = base_cmd + [
+            "-vf", vf_chain,
+            "-af", af,
+            "-map_metadata", "-1",
+            "-c:v", "libx264", "-profile:v", "high", "-preset", "medium",
+            "-crf", str(sp["crf"]), "-pix_fmt", "yuv420p",
+            "-g", str(sp["gop"]),
+            "-c:a", "aac", "-b:a", "160k", "-ar", "44100",
+            "-movflags", "+faststart",
+            dst,
+        ]
+
     subprocess.run(cmd, check=True)
     return dst

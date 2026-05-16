@@ -130,16 +130,41 @@ def run() -> int:
         print(f"[caption] title='{title}' tags={tags} "
               f"(hashtag_pool={len(pool)} title_pool={len(title_pool)})")
 
+        # Fetch a commercial-OK royalty-free music track (Jamendo) if a
+        # client id is configured. We always replace audio so every reel
+        # is monetization-safe and avoids copyright mute/block.
+        music_path = ""
+        music_attribution = ""
+        jamendo_id = os.environ.get("JAMENDO_CLIENT_ID", "").strip()
+        music_mode = os.environ.get("MUSIC_REPLACE_MODE", "duck").strip().lower()
+        if jamendo_id and music_mode != "off":
+            from . import music as music_mod
+            tags_env = os.environ.get(
+                "MUSIC_TAGS",
+                "ambient,chill,cinematic,instrumental,calm,nature",
+            )
+            mp = os.path.join(tmp, "music.mp3")
+            track = music_mod.fetch_music_for_video(
+                jamendo_id, tags_env, mp, seed=real_name,
+            )
+            if track is not None:
+                music_path = mp
+                music_attribution = track.attribution()
+
         enhanced = os.path.join(tmp, "enhanced.mp4")
         enh.enhance(
             raw, enhanced,
             watermark_text=cfg.watermark_text,
             filter_style=cfg.filter_style,
             font_file=cfg.watermark_font_file,
+            music_path=music_path,
+            music_mix=music_mode if music_path else "off",
         )
         print(f"[enhance] -> {enhanced} ({os.path.getsize(enhanced)} bytes)")
 
         caption = captions.build_caption(title, tags)
+        if music_attribution:
+            caption = f"{caption}\n\n🎵 {music_attribution}"
 
         # Humanization jitter (auto/cron runs only). For manual runs we
         # post immediately, no waiting.

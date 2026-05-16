@@ -75,6 +75,25 @@ def fetch_video(video_id: str, token: str, api_version: str) -> dict:
     return r.json()
 
 
+def hide_post(post_id: str, token: str, api_version: str) -> tuple[bool, str]:
+    """Hide a Page post (removes it from the timeline without deleting).
+    Returns (ok, detail). Engagement + permalink are preserved.
+
+    NOTE: ``post_id`` must be the **page-scoped post id** in the form
+    ``{page_id}_{post_id}``. The raw video id won't work here.
+    """
+    if "_" not in str(post_id):
+        return False, f"post_id {post_id!r} is not page-scoped (need PAGEID_POSTID)"
+    r = requests.post(
+        f"{GRAPH}/{api_version}/{post_id}",
+        data={"is_hidden": "true", "access_token": token},
+        timeout=20,
+    )
+    if not r.ok:
+        return False, f"HTTP {r.status_code}: {r.text[:200]}"
+    return True, "hidden"
+
+
 def classify(video: dict) -> tuple[str, list[str]]:
     """Return (overall_status, list_of_issue_strings)."""
     if "_error" in video:
@@ -150,15 +169,20 @@ def main() -> int:
     lookback_days = int(os.environ.get("HEALTH_LOOKBACK_DAYS", DEFAULT_LOOKBACK_DAYS))
     cutoff = _utc_now() - timedelta(days=lookback_days)
 
+    auto_hide = os.environ.get("HEALTH_AUTO_HIDE", "true").strip().lower() in ("1", "true", "yes")
+    hide_cap = int(os.environ.get("HEALTH_HIDE_CAP", "3"))   # max per run, anti-spam
+
     posted = state.load_posted()
     if not posted:
         print("[health] no posted reels to check")
         return 0
 
-    print(f"[health] lookback={lookback_days}d (since {cutoff.isoformat(timespec='seconds')})")
+    print(f"[health] lookback={lookback_days}d (since {cutoff.isoformat(timespec='seconds')}) "
+          f"auto_hide={auto_hide} hide_cap={hide_cap}")
 
     rows: list[dict] = []
     counts = {"OK": 0, "WARN": 0, "MUTED": 0, "BLOCKED": 0, "ERROR": 0}
+    hides_done = 0
 
     for file_id, info in sorted(
         posted.items(),
@@ -168,32 +192,57 @@ def main() -> int:
         posted_at = _parse_iso(info.get("posted_at", ""))
         if posted_at is None or posted_at < cutoff:
             continue
-        video_id = info.get("fb_video_id") or info.get("fb_post_id")
-        if not video_id:
+        raw_video_id = info.get("fb_video_id") or info.get("fb_post_id")
+        if not raw_video_id:
             continue
-        # If the saved id is a composite post_id (pageid_postid), strip to numeric portion.
-        if "_" in str(video_id):
-            video_id = str(video_id).split("_")[-1]
+        video_id = str(raw_video_id)
+        if "_" in video_id:
+            video_id = video_id.split("_")[-1]
 
         v = fetch_video(video_id, cfg.fb_page_token, cfg.fb_api_version)
         status, issues = classify(v)
         counts[status] = counts.get(status, 0) + 1
 
+        action = ""
+        already_hidden = info.get("hidden") is True
+        should_hide = (
+            auto_hide
+            and not already_hidden
+            and status in ("MUTED", "BLOCKED")
+            and hides_done < hide_cap
+        )
+        if should_hide:
+            page_scoped = info.get("fb_post_id") or ""
+            ok, detail = hide_post(page_scoped, cfg.fb_page_token, cfg.fb_api_version)
+            if ok:
+                info["hidden"] = True
+                info["hidden_at"] = _utc_now().isoformat(timespec="seconds")
+                posted[file_id] = info
+                hides_done += 1
+                action = "AUTO-HIDDEN"
+            else:
+                action = f"hide-failed: {detail}"
+
         rows.append({
             "posted_at": info.get("posted_at", ""),
-            "status": status,
-            "issues": issues,
+            "status": status if not action.startswith("AUTO") else f"{status} (hidden)",
+            "issues": issues + ([action] if action else []),
             "video_id": video_id,
             "name": info.get("name", ""),
             "permalink": v.get("permalink_url", ""),
         })
 
         flag = "" if status == "OK" else f" issues={issues}"
-        print(f"[health] {status:7s} {video_id} {info.get('name','')[:60]}{flag}")
+        extra = f" -> {action}" if action else ""
+        print(f"[health] {status:7s} {video_id} {info.get('name','')[:60]}{flag}{extra}")
+
+    if hides_done:
+        state.save_posted(posted)
+        print(f"[health] state/posted.json updated with {hides_done} hidden flag(s)")
 
     write_report(rows)
     print()
-    print("[health] summary:", json.dumps(counts))
+    print("[health] summary:", json.dumps(counts), f"hides_done={hides_done}")
     print(f"[health] wrote state/health_report.md ({len(rows)} rows)")
     return 0
 

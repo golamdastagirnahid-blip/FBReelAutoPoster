@@ -66,6 +66,12 @@ jobs:
       # OTHER, LIFESTYLE, BEAUTY_FASHION, COMEDY, CUTE_ANIMALS, ENTERTAINMENT,
       # FAMILY, FITNESS, FOOD_HEALTH, HOME, MUSIC, SCIENCE, SPORTS, TECHNOLOGY.
       FB_CONTENT_CATEGORY: ${{ vars.FB_CONTENT_CATEGORY || 'OTHER' }}
+      # Royalty-free background music (Jamendo). Filters to CC0 / CC-BY only
+      # so reels are monetization-safe. Empty client id disables music.
+      JAMENDO_CLIENT_ID:   ${{ secrets.JAMENDO_CLIENT_ID }}
+      # MUSIC_REPLACE_MODE: 'duck' (mix orig at -15dB under music) | 'full' (only music) | 'off'
+      MUSIC_REPLACE_MODE:  ${{ vars.MUSIC_REPLACE_MODE || 'duck' }}
+      MUSIC_TAGS:          ${{ vars.MUSIC_TAGS || 'ambient,chill,cinematic,instrumental,calm,nature' }}
       DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
       # FORCE_POST: skip scheduler & post immediately. Only set on manual runs.
       FORCE_POST: ${{ github.event_name == 'workflow_dispatch' && inputs.force_post && 'true' || 'false' }}
