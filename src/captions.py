@@ -1,14 +1,19 @@
-"""Caption builder: cleaned title from filename + sampled hashtag pool.
+"""Caption builder: cleaned title from filename + filename-aware hashtags.
 
-We deliberately do NOT trust hashtags embedded in Drive filenames because
-Drive truncates display names to ~50 chars and the trailing tags get cut
-off mid-word. Instead we:
+Source filenames frequently carry the original creator's curated tags
+(e.g. ``masstiktok_naturebeautyscenery__#flowers #rain #naturebeauty.mp4``).
+Those tags are the **ground truth** for the video's content, so we:
 
-- Strip a configurable junk prefix from the filename (e.g. scraper output
-  like ``masstiktok_muskoluk1__``).
-- Use the rest of the cleaned filename as the human-readable title.
-- Randomly sample N hashtags from ``hashtags.txt`` for every post so each
-  caption looks fresh and human-curated.
+- Strip the scraper/platform prefix (``masstiktok_<handle>__``).
+- Extract any well-formed ``#tag`` tokens from the remaining filename.
+- Use the rest as the human-readable title.
+- Build the post's hashtag set as: filename-tags FIRST, then random fill
+  from ``hashtags.txt`` to reach the target count. This keeps each post's
+  topic consistent with the video while still adding reach via the pool.
+
+A defensive token-validity filter is applied so a Drive-truncated tail
+(``#nat``) does not contaminate the output \u2014 only tags >=4 chars are
+kept from the filename.
 """
 from __future__ import annotations
 import os
@@ -133,13 +138,102 @@ def clean_title(
     return name or "Reel"
 
 
+# Match #tag tokens. Tag = letters+digits+underscore, 2-50 chars. We
+# defensively require >=4 chars when extracting from filenames so a
+# Drive-truncated tail like '#nat' is dropped.
+_FILENAME_HASHTAG_RE = re.compile(r"#([A-Za-z][A-Za-z0-9_]{2,49})")
+
+
+def extract_filename_hashtags(filename: str, *, min_len: int = 4) -> list[str]:
+    """Pull well-formed ``#tag`` tokens out of a source filename.
+
+    De-duplicated, original case preserved (FB renders them case-insensitively
+    so casing only affects display). Tags shorter than ``min_len`` are
+    rejected to guard against Drive's display-name truncation.
+    """
+    name = os.path.basename(filename)
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw in _FILENAME_HASHTAG_RE.findall(name):
+        if len(raw) < min_len:
+            continue
+        key = raw.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(raw)
+    return out
+
+
+_PLATFORM_NAMES_LOWER = {p.lower() for p in _KNOWN_PLATFORMS}
+# Common scraper noise tokens we don't want as content keywords.
+_NOISE_TOKENS = _PLATFORM_NAMES_LOWER | {
+    "video", "videos", "download", "downloaded", "final", "copy", "copies",
+    "edit", "edited", "watermark", "nowatermark", "hd", "fhd", "uhd", "mp4",
+}
+
+
+def extract_filename_keywords(filename: str) -> list[str]:
+    """Return clean keyword tokens from the filename's content area.
+
+    The filename is split on the scraper terminator ``__`` (if present) into
+    a *handle/category* half and a *content* half. We extract alphabetic
+    tokens (>=4 chars) from BOTH halves but reject:
+
+      - platform names (``masstiktok``, ``tiktok``, ``instagram``...)
+      - common scraper noise tokens (``download``, ``hd``, ``mp4``...)
+
+    This gives us tokens like ``naturebeautyscenery`` as content keywords
+    even when they sit in the "handle" position of the original prefix.
+    Hashtag content is removed first \u2014 those are returned separately by
+    ``extract_filename_hashtags``.
+    """
+    name = os.path.splitext(os.path.basename(filename))[0]
+    # Strip hashtag tokens entirely so their bodies don't double-count.
+    name = re.sub(r"#\S*", " ", name)
+    out: list[str] = []
+    seen: set[str] = set()
+    for tok in re.findall(r"[A-Za-z]{4,}", name):
+        key = tok.lower()
+        if key in seen or key in _NOISE_TOKENS:
+            continue
+        seen.add(key)
+        out.append(key)
+    return out
+
+
 def sample_hashtags(pool: list[str], count_min: int, count_max: int,
-                    rng: random.Random | None = None) -> list[str]:
-    if not pool:
-        return []
+                    rng: random.Random | None = None,
+                    primary: list[str] | None = None) -> list[str]:
+    """Build a hashtag list of size in ``[count_min, count_max]``.
+
+    If ``primary`` (e.g. tags lifted from the source filename) is provided,
+    those are placed first and the remainder is filled by random sampling
+    from ``pool`` (skipping pool entries that duplicate a primary tag).
+    Original casing of ``primary`` tags is preserved.
+    """
     rng = rng or random.Random()
-    n = rng.randint(min(count_min, len(pool)), min(count_max, len(pool)))
-    return rng.sample(pool, n)
+    primary = primary or []
+    seen: set[str] = {p.lower() for p in primary}
+    out: list[str] = list(primary)
+
+    target = rng.randint(
+        min(count_min, max(count_min, len(out))),
+        max(count_max, len(out)),
+    )
+    if not pool:
+        return out[:target]
+
+    # Pool entries that aren't already in `out`
+    pool_filtered = [p for p in pool if p.lower() not in seen]
+    rng.shuffle(pool_filtered)
+    while len(out) < target and pool_filtered:
+        tag = pool_filtered.pop()
+        if tag.lower() in seen:
+            continue
+        seen.add(tag.lower())
+        out.append(tag)
+    return out
 
 
 def build_caption(title: str, hashtags: list[str]) -> str:

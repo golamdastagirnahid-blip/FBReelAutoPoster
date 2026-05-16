@@ -124,10 +124,19 @@ def run() -> int:
         title_pool = captions.load_title_pool(cfg.titles_file)
         title = captions.clean_title(real_name, fallback_pool=title_pool)
         pool = captions.load_hashtag_pool(cfg.hashtags_file)
+        # Pull hashtags + keywords directly out of the source filename.
+        # These reflect the original creator's curated tags and are the
+        # *strongest* signal we have for both FB hashtags and music match.
+        filename_hashtags = captions.extract_filename_hashtags(real_name)
+        filename_keywords = captions.extract_filename_keywords(real_name)
         tags = captions.sample_hashtags(
             pool, cfg.hashtags_per_post_min, cfg.hashtags_per_post_max,
+            primary=filename_hashtags,
         )
-        print(f"[caption] title='{title}' tags={tags} "
+        print(f"[caption] title='{title}' "
+              f"filename_hashtags={filename_hashtags} "
+              f"filename_keywords={filename_keywords} "
+              f"final_tags={tags} "
               f"(hashtag_pool={len(pool)} title_pool={len(title_pool)})")
 
         # ---- Royalty-free music (Jamendo, commercial-OK CC0/CC-BY) -----
@@ -153,6 +162,8 @@ def run() -> int:
                 filename=real_name,
                 title=title,
                 video_path=raw,
+                hashtags=filename_hashtags,
+                keywords=filename_keywords,
             )
             mp = os.path.join(tmp, "music.mp3")
             try:

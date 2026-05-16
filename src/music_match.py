@@ -388,14 +388,25 @@ def build_profile(
     filename: str = "",
     title: str = "",
     video_path: str = "",
+    hashtags: list[str] | None = None,
+    keywords: list[str] | None = None,
 ) -> MusicProfile:
     """Build a ``MusicProfile`` from any combination of source signals.
 
-    All inputs are optional but at least one should be provided. The
-    function always returns a usable profile (falls back to a sensible
+    Signal priority (highest to lowest):
+      1. ``hashtags`` \u2014 explicit ``#tags`` from filename. Ground truth.
+      2. ``keywords`` \u2014 non-hashtag descriptive tokens from filename.
+      3. ``filename`` + ``title`` \u2014 free-text fallback.
+      4. ``video_path`` \u2014 visual analysis nudges.
+
+    All inputs optional, but at least one should be provided. The function
+    always returns a usable profile (falls back to a sensible
     ambient/instrumental default).
     """
-    tokens = _tokenize(filename, title)
+    # Hashtags are the highest-signal source: place them first so the
+    # taxonomy matches them directly. Keywords next, then filename/title.
+    primary_text = " ".join(hashtags or []) + " " + " ".join(keywords or [])
+    tokens = _tokenize(primary_text, filename, title)
     fragment, matched = _apply_taxonomy(tokens)
     stats: dict[str, float] = {}
     if video_path:
