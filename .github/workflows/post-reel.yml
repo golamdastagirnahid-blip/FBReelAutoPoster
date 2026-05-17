@@ -45,13 +45,16 @@ jobs:
       DRIVE_OAUTH_CLIENT_ID:     ${{ secrets.DRIVE_OAUTH_CLIENT_ID }}
       DRIVE_OAUTH_CLIENT_SECRET: ${{ secrets.DRIVE_OAUTH_CLIENT_SECRET }}
       TIMEZONE:        ${{ vars.TIMEZONE || 'Asia/Dhaka' }}
-      # Lower, more human cadence. Heavy posting (10+/day) gets reach-throttled.
-      POSTS_PER_DAY_MIN: ${{ vars.POSTS_PER_DAY_MIN || '5' }}
-      POSTS_PER_DAY_MAX: ${{ vars.POSTS_PER_DAY_MAX || '7' }}
-      # Full 24h posting window for maximum humanization / unpredictability.
-      # Slots are still randomized per day, with >=60min min gap enforced.
-      WINDOW_START_HOUR: ${{ vars.WINDOW_START_HOUR || '0' }}
-      WINDOW_END_HOUR:   ${{ vars.WINDOW_END_HOUR || '24' }}
+      # New-page-safe cadence: 3 posts/day. Scheduler picks slots from
+      # human-active engagement bands (mornings, lunch, evenings) using a
+      # cryptographic per-day nonce so post times are unpredictable to
+      # outside observers.
+      POSTS_PER_DAY_MIN: ${{ vars.POSTS_PER_DAY_MIN || '3' }}
+      POSTS_PER_DAY_MAX: ${{ vars.POSTS_PER_DAY_MAX || '3' }}
+      # Window 08:00-23:00 keeps slots inside the engagement bands and
+      # avoids any 'bot at 4am' signal.
+      WINDOW_START_HOUR: ${{ vars.WINDOW_START_HOUR || '8' }}
+      WINDOW_END_HOUR:   ${{ vars.WINDOW_END_HOUR || '23' }}
       SLOT_TOLERANCE_MINUTES: ${{ vars.SLOT_TOLERANCE_MINUTES || '25' }}
       HASHTAGS_PER_POST_MIN: ${{ vars.HASHTAGS_PER_POST_MIN || '8' }}
       HASHTAGS_PER_POST_MAX: ${{ vars.HASHTAGS_PER_POST_MAX || '12' }}
