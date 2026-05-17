@@ -740,5 +740,100 @@
     "fb_post_id": "122114092917283297",
     "name": "masstiktok_naturebeautyscenery__#naturespring #flowers #magi.mp4",
     "posted_at": "2026-05-16T11:43:37+00:00"
+  },
+  "1vU_Wkf67WEYCXXeyk57XTH9jhhxXgTYo": {
+    "caption": "Golden hour over endless beauty \ud83c\udf05 \ud83c\udf3f\n\n#cuteanimals #satisfying #facebookreels #trendingreels #animalsofinstagram #birds #2025 #fyp #animals #shortsfeed #wow #peaceful\n\n\ud83c\udfb5 Music: \"Swansong\" by Dan Falvey via Jamendo (CC-BY)",
+    "fb_post_id": "122114150061283297",
+    "fb_video_id": "957950060410914",
+    "music_track": {
+      "artist": "Dan Falvey",
+      "attribution": "Music: \"Swansong\" by Dan Falvey via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1439448&format=mp32&from=%2Fvt7ng5MY0tewT6q4eQT%2Bw%3D%3D%7Ct7DBFrZxd%2BZVfYsDnTKdlw%3D%3D",
+      "bpm": null,
+      "duration": 271,
+      "id": "1439448",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.462,
+        "genre_tags": [
+          "cinematic",
+          "emotional",
+          "ambient",
+          "piano",
+          "orchestral"
+        ],
+        "keywords_matched": [
+          "golden"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_uplifting",
+          "mood_inspirational",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.374,
+          "saturation": 0.213,
+          "warmth": -0.037
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "filmscore",
+        "choral",
+        "orchestra",
+        "guitar"
+      ],
+      "name": "Swansong",
+      "semantic_analysis": {
+        "calmness": 0.675,
+        "dominant_themes": [
+          "sky",
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf05",
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.375,
+        "related_tags": [],
+        "splits": {},
+        "themes": {
+          "sky": 1.0,
+          "wilderness": 1.0
+        },
+        "tokens": [
+          "muskoluk",
+          "golden",
+          "crested",
+          "beauty",
+          "braving",
+          "masstiktok",
+          "the"
+        ],
+        "warmth": 0.5
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "instrumental",
+        "cinematic",
+        "neutral"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__ A golden-crested beauty braving the r.mp4",
+    "posted_at": "2026-05-17T04:18:37+00:00"
   }
 }
