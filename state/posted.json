@@ -1228,6 +1228,101 @@
     "name": "masstiktok_muskoluk1__#2025recap.mp4",
     "posted_at": "2026-05-15T09:22:15+00:00"
   },
+  "1UeYXFlBjuCHC8vYydfl5DgRuSDLrdGKa": {
+    "caption": "The sound of rain \u2014 turn it up \ud83d\udca7\n\n#rainyday #rainfall #raindrops #monsoon #shortsfeed #instagood #videooftheday #birdwatching #positivevibes #cutebirds\n\n\ud83c\udfb5 Music: \"R\u00caVERIE\" by PATROUX via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122114541531283297",
+    "fb_video_id": "1291592423126948",
+    "music_track": {
+      "artist": "PATROUX",
+      "attribution": "Music: \"R\u00caVERIE\" by PATROUX via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=800967&format=mp32&from=AXBHQeKSPiX4BSnQaUzMvw%3D%3D%7CLFMZ0JPGgpQIJEk8v8W2Zg%3D%3D",
+      "bpm": null,
+      "duration": 280,
+      "id": "800967",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.215,
+        "genre_tags": [
+          "ambient",
+          "chillout",
+          "peaceful",
+          "atmospheric",
+          "cinematic"
+        ],
+        "keywords_matched": [
+          "rain"
+        ],
+        "speed": [
+          "verylow",
+          "low"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_dreamy",
+          "mood_meditative"
+        ],
+        "visual_stats": {
+          "brightness": 0.424,
+          "saturation": 0.133,
+          "warmth": 0.101
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,chillout)",
+        "speed=low",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "electronic",
+        "ambient",
+        "chillout",
+        "synthesizer",
+        "computer"
+      ],
+      "name": "R\u00caVERIE",
+      "semantic_analysis": {
+        "calmness": 0.85,
+        "dominant_themes": [
+          "water"
+        ],
+        "emojis": [
+          "\ud83d\udca7"
+        ],
+        "energy": 0.25,
+        "related_tags": [
+          "rainyday",
+          "rainfall",
+          "raindrops",
+          "monsoon"
+        ],
+        "splits": {},
+        "themes": {
+          "water": 1.0
+        },
+        "tokens": [
+          "muskoluk",
+          "pink",
+          "cockatoo",
+          "rain",
+          "australia",
+          "masstiktok",
+          "the"
+        ],
+        "warmth": -0.2
+      },
+      "speed": "low",
+      "vartags": [
+        "meditative",
+        "neutral"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__Pink Cockatoo in the rain  Australia\u2019s.mp4",
+    "posted_at": "2026-05-20T12:49:04+00:00"
+  },
   "1ZQ5IBOsp09-gPcI3ludLuxEM65a0wymj": {
     "fb_post_id": "122114079057283297",
     "name": "masstiktok_naturebeautyscenery__#naturebeauty #paradise #nat.mp4",
