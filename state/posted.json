@@ -1888,6 +1888,129 @@
     "name": "masstiktok_naturebeautyscenery__#MLBB #WinWithMLBB #moscov #.mp4",
     "posted_at": "2026-05-19T17:31:25+00:00"
   },
+  "1lWfQ3ghRX4C601JR3xPWuVcq14XQ4fYb": {
+    "caption": "Birds of the wild nature \ud83c\udf3f \ud83d\udc26\n\n#birds #naturebeauty #nature #bird #birdsofinstagram #wildlife #birdphotography #foryoupage #beautiful #2025\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122114639013283297",
+    "fb_video_id": "3023408177857714",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=lzR%2BRhFc97Y9Y9fgnbXGww%3D%3D%7CsYMutiEERS%2FspPVEYm1gQQ%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.389,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "wild",
+          "birds"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting"
+        ],
+        "visual_stats": {
+          "brightness": 0.552,
+          "saturation": 0.16,
+          "warmth": 0.053
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.675,
+        "dominant_themes": [
+          "wilderness",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.362,
+        "related_tags": [
+          "bird",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "birds",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#birds #naturebeauty #nature.mp4",
+    "posted_at": "2026-05-21T14:32:26+00:00"
+  },
   "1n_Ptr0FQVwBPvE-bsY_jw85lRvoQEClA": {
     "caption": "Flowers that grow where nature stays untouched \ud83c\udf3f \ud83c\udf3c\n\n#naturespring #flowers #natu #naturelovers #naturephotography #earth #wildlife #mood #nature\n\n\ud83c\udfb5 Music: \"DM2012\" by Adragante via Jamendo (CC-BY)",
     "fb_post_id": "122114590479283297",
