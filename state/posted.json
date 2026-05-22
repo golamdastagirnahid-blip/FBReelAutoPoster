@@ -1664,6 +1664,113 @@
     "name": "masstiktok_naturebeautyscenery__#naturebeauty #naturelover # (5).mp4",
     "posted_at": "2026-05-16T16:57:37+00:00"
   },
+  "1dXN3py6uhCkVucH2sJqGr7LAsC9hzSBM": {
+    "caption": "Bird of the wild wild \ud83d\udc26 \ud83c\udf3f\n\n#birds #birdsofinstagram #wildlife #birdphotography #fypviral #relax #cuteanimals #reelsfb #beautiful #viral\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122114727831283297",
+    "fb_video_id": "4047785818853178",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=rQEilRF5FCNvBHyKmDYGLw%3D%3D%7CylWVigmhJXbdFTHcyTdtcA%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.445,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk"
+        ],
+        "keywords_matched": [
+          "wild",
+          "bird"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting"
+        ],
+        "visual_stats": {
+          "brightness": 0.468,
+          "saturation": 0.126,
+          "warmth": 0.13
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.475,
+        "dominant_themes": [
+          "wildlife",
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83d\udc26",
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.55,
+        "related_tags": [
+          "birds",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography"
+        ],
+        "splits": {},
+        "themes": {
+          "wilderness": 1.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "muskoluk",
+          "caught",
+          "fire",
+          "colored",
+          "bird",
+          "wild",
+          "masstiktok",
+          "the"
+        ],
+        "warmth": 0.15
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__Caught a fire-colored bird in the wild.mp4",
+    "posted_at": "2026-05-22T17:31:37+00:00"
+  },
   "1dlPKP1XyppDkDIkFyxWCbkF086HnkymM": {
     "caption": "These bird will melt your heart \ud83d\udc26 \ud83d\udc96\n\n#birds #birdsofinstagram #wildlife #birdphotography #viralreels #birdfamily #wildlifephotography #fypviral #birdwatching #beautiful #adorableanimals #relaxing\n\n\ud83c\udfb5 Music: \"Full Moon\" by Unicite via Jamendo (CC-BY-SA)",
     "fb_post_id": "122114121831283297",
