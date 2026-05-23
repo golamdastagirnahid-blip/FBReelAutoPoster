@@ -588,6 +588,127 @@
     "name": "masstiktok_naturebeautyscenery__#naturespring #naturebeauty  (1).mp4",
     "posted_at": "2026-05-21T08:30:01+00:00"
   },
+  "17mLyTNTFV_JASLEk0ZE3RjE6M-WPIFCi": {
+    "caption": "Pure nature, nothing else needed \ud83c\udf3f \ud83d\udc96\n\n#natutebeauty #naturelover #naturelovers #naturephotography #earth #wildlife #reelsinstagram #facebookreels #healing #mood #birdfamily\n\n\ud83c\udfb5 Music: \"Coming night\" by Doppelganger via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122114777583283297",
+    "fb_video_id": "980495771573049",
+    "music_track": {
+      "artist": "Doppelganger",
+      "attribution": "Music: \"Coming night\" by Doppelganger via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1742823&format=mp32&from=Mf83SFj3yJ4u0e9XZ6ZoXQ%3D%3D%7Cf%2B%2B905CXEyxWg82dG4Uw8w%3D%3D",
+      "bpm": null,
+      "duration": 215,
+      "id": "1742823",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.28,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "piano",
+          "romantic",
+          "acoustic"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "love",
+          "love"
+        ],
+        "speed": [
+          "low",
+          "medium",
+          "verylow"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_romantic",
+          "mood_dreamy",
+          "mood_dark"
+        ],
+        "visual_stats": {
+          "brightness": 0.283,
+          "saturation": 0.125,
+          "warmth": 0.029
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=low",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "electronic",
+        "ambient",
+        "filmscore",
+        "computer"
+      ],
+      "name": "Coming night",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness",
+          "emotion"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc96"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ],
+          "naturelover": [
+            "nature",
+            "lover"
+          ]
+        },
+        "themes": {
+          "emotion": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "natutebeauty",
+          "nature",
+          "lover",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "low",
+      "vartags": [
+        "sad",
+        "cinematic",
+        "nostalgic"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#natutebeauty #naturelover #.mp4",
+    "posted_at": "2026-05-23T10:09:00+00:00"
+  },
   "17tPYlpdYMWNNtQro7Z0nq0LEzmHirNc3": {
     "fb_post_id": "122113943895283297",
     "name": "masstiktok_muskoluk1__#nest #nature #birds #relax.mp4",
