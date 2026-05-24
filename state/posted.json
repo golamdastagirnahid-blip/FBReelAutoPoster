@@ -2944,6 +2944,115 @@
     "name": "masstiktok_naturebeautyscenery__#flowers #rain #naturebeauty.mp4",
     "posted_at": "2026-05-16T17:16:03+00:00"
   },
+  "1pGwCZC5iXs-ZaQxrowU17iCwHWTv-25T": {
+    "caption": "Bird of the wild beautiful \ud83c\udf3f \ud83d\udc26\n\n#birds #birdsofinstagram #wildlife #birdphotography #goodvibes #reelsinstagram #fypviral #beautiful #mood #videooftheday #instadaily #birdlover\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122114873589283297",
+    "fb_video_id": "1532077374952707",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=hFKIoa8F%2Bs9A%2FZb7h2UpsA%3D%3D%7C0rl6SC9NQoY4Q5eEStZ0Bg%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.395,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk"
+        ],
+        "keywords_matched": [
+          "nature",
+          "wild",
+          "bird"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting"
+        ],
+        "visual_stats": {
+          "brightness": 0.417,
+          "saturation": 0.136,
+          "warmth": 0.107
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.65,
+        "dominant_themes": [
+          "wilderness",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.383,
+        "related_tags": [
+          "birds",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography",
+          "naturelovers",
+          "naturephotography",
+          "earth"
+        ],
+        "splits": {},
+        "themes": {
+          "wilderness": 2.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "muskoluk",
+          "beautiful",
+          "fantasy",
+          "bird",
+          "nature",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__Beautiful fantasy bird in nature .mp4",
+    "posted_at": "2026-05-24T14:11:27+00:00"
+  },
   "1qxAAPp1_xeMci8VX9nJkWkTR_ESvNese": {
     "fb_post_id": "122113943583283297",
     "name": "masstiktok_naturebeautyscenery__#MLBB9TH #MLBB.mp4",
