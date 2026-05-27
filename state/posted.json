@@ -2342,6 +2342,109 @@
     "name": "masstiktok_muskoluk1__#2025recap.mp4",
     "posted_at": "2026-05-15T09:22:15+00:00"
   },
+  "1TlY-n0WUWNXOFUmv3tX1WiwcDDLXj8db": {
+    "caption": "Untouched beautiful \u2014 some places stay quiet \ud83c\udf3f \ud83d\udc96\n\n#birds #birdsofinstagram #wildlife #birdphotography #viralvideos #calming #explore #cuteanimals\n\n\ud83c\udfb5 Music: \"Walking Shoes\" by Slim via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122115311097283297",
+    "fb_video_id": "1488285689761326",
+    "music_track": {
+      "artist": "Slim",
+      "attribution": "Music: \"Walking Shoes\" by Slim via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=22291&format=mp32&from=H1F82xC1hXKuLBPGm8Aflw%3D%3D%7CZuWamHAmYn6c1jACWAxItA%3D%3D",
+      "bpm": null,
+      "duration": 155,
+      "id": "22291",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.44,
+        "genre_tags": [
+          "acoustic",
+          "instrumental",
+          "light",
+          "gentle",
+          "folk",
+          "ambient"
+        ],
+        "keywords_matched": [
+          "bird"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_happy",
+          "mood_uplifting",
+          "mood_relaxing",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.344,
+          "saturation": 0.149,
+          "warmth": -0.108
+        }
+      },
+      "match_reasons": [
+        "genres+1(folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "folk",
+        "pop",
+        "singersongwriter",
+        "acousticguitar"
+      ],
+      "name": "Walking Shoes",
+      "semantic_analysis": {
+        "calmness": 0.633,
+        "dominant_themes": [
+          "wilderness",
+          "emotion"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc96"
+        ],
+        "energy": 0.417,
+        "related_tags": [
+          "birds",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography"
+        ],
+        "splits": {},
+        "themes": {
+          "emotion": 1.0,
+          "wilderness": 1.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "muskoluk",
+          "most",
+          "beautiful",
+          "white",
+          "cute",
+          "bird",
+          "masstiktok",
+          "red",
+          "and"
+        ],
+        "warmth": 0.267
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "instrumental",
+        "neutral"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__Most beautiful red and white cute bird.mp4",
+    "posted_at": "2026-05-27T16:11:10+00:00"
+  },
   "1UeYXFlBjuCHC8vYydfl5DgRuSDLrdGKa": {
     "caption": "The sound of rain \u2014 turn it up \ud83d\udca7\n\n#rainyday #rainfall #raindrops #monsoon #shortsfeed #instagood #videooftheday #birdwatching #positivevibes #cutebirds\n\n\ud83c\udfb5 Music: \"R\u00caVERIE\" by PATROUX via Jamendo (CC-BY-SA)",
     "fb_post_id": "122114541531283297",
