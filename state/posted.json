@@ -3104,6 +3104,127 @@
     "name": "masstiktok_naturebeautyscenery__#redroses #rose #flowers #na.mp4",
     "posted_at": "2026-05-25T06:49:13+00:00"
   },
+  "1a-crCTQvicOcmpO75acZrhuoFWP9mOCS": {
+    "caption": "Wild nature blooming with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #colorful #naturebe #flower #bloom #blooming #petals #reelsinstagram #amazing #shortsfeed #animals #trendingreels\n\n\ud83c\udfb5 Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122115680409283297",
+    "fb_video_id": "27318483267771335",
+    "music_track": {
+      "artist": "Luke",
+      "attribution": "Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1202870&format=mp32&from=r83kus4N2RcKh8hTuOuZJg%3D%3D%7CxYi8fSz3aOu2G08v%2BxyoVw%3D%3D",
+      "bpm": null,
+      "duration": 198,
+      "id": "1202870",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.36,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "nature",
+          "scenery",
+          "nature",
+          "wild",
+          "flowers",
+          "bloom"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.483,
+          "saturation": 0.151,
+          "warmth": -0.017
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "filmscore",
+        "rock"
+      ],
+      "name": "freedom",
+      "semantic_analysis": {
+        "calmness": 0.712,
+        "dominant_themes": [
+          "wilderness",
+          "flora"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83c\udf3c"
+        ],
+        "energy": 0.325,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "flowers",
+          "colorful",
+          "naturebe",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "medium",
+      "vartags": [
+        "happy",
+        "uplifting",
+        "adventure",
+        "liberty"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#flowers #colorful #naturebe (1).mp4",
+    "posted_at": "2026-05-31T14:59:39+00:00"
+  },
   "1bLK66Y-TIK29SMx-sV_C8O1w5ogsLkVa": {
     "caption": "Where birds roam free across the nature \ud83d\udc26 \ud83c\udf3f\n\n#nature #birds #relax #birdlover #naturelovers #naturephotography #earth #wildlife #heartwarming\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122115562425283297",
