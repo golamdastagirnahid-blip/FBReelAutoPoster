@@ -3772,6 +3772,109 @@
     "name": "masstiktok_naturebeautyscenery__#flowers #colorful #naturebe (1).mp4",
     "posted_at": "2026-05-31T14:59:39+00:00"
   },
+  "1aw2xmEQPDaPvbCyg5yzTZAEIHrAjBPRe": {
+    "caption": "Pure nature, nothing else needed \ud83c\udf3f \ud83d\udc96\n\n#fireplace #cozy #videobackg #naturelovers #naturephotography #earth #wildlife #cutebirds\n\n\ud83c\udfb5 Music: \"new wave2012\" by Adragante via Jamendo (CC-BY)",
+    "fb_post_id": "122115987699283297",
+    "fb_video_id": "2523641694744730",
+    "music_track": {
+      "artist": "Adragante",
+      "attribution": "Music: \"new wave2012\" by Adragante via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=941492&format=mp32&from=8enDyyKZDYYfvn5MD5iNcQ%3D%3D%7C%2FB8l6V4gdaGdpcK%2FXF0Ltw%3D%3D",
+      "bpm": null,
+      "duration": 194,
+      "id": "941492",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.339,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative"
+        ],
+        "visual_stats": {
+          "brightness": 0.32,
+          "saturation": 0.142,
+          "warmth": 0.082
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "harp",
+        "strings"
+      ],
+      "name": "new wave2012",
+      "semantic_analysis": {
+        "calmness": 0.738,
+        "dominant_themes": [
+          "wilderness",
+          "emotion"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc96"
+        ],
+        "energy": 0.312,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "emotion": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "fireplace",
+          "cozy",
+          "videobackg",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "medium",
+      "vartags": [],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#fireplace #cozy #videobackg.mp4",
+    "posted_at": "2026-06-03T17:18:28+00:00"
+  },
   "1bLK66Y-TIK29SMx-sV_C8O1w5ogsLkVa": {
     "caption": "Where birds roam free across the nature \ud83d\udc26 \ud83c\udf3f\n\n#nature #birds #relax #birdlover #naturelovers #naturephotography #earth #wildlife #heartwarming\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122115562425283297",
