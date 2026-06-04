@@ -2988,6 +2988,126 @@
     "name": "masstiktok_naturebeautyscenery__#MLBB9TH #MLBB #wherehaveyou.mp4",
     "posted_at": "2026-05-15T09:00:02+00:00"
   },
+  "1P2WXucMJ9iTnCoZ47aD3SeWYugyeiCc3": {
+    "caption": "Flowers that grow where nature stays untouched \ud83c\udf3f \ud83c\udf3c\n\n#waterfalls #flowers #fantas #flower #bloom #blooming #petals #2025 #animals #satisfying #birdsofinstagram\n\n\ud83c\udfb5 Music: \"A Flight At Dusk\" by HawkWave via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122116034265283297",
+    "fb_video_id": "1172679521665676",
+    "music_track": {
+      "artist": "HawkWave",
+      "attribution": "Music: \"A Flight At Dusk\" by HawkWave via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=472081&format=mp32&from=Swdau%2B1YtI9hiDE0oppwOQ%3D%3D%7C6Siywfhv0Hstd7JpLVoiHQ%3D%3D",
+      "bpm": null,
+      "duration": 276,
+      "id": "472081",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.319,
+        "genre_tags": [
+          "ambient",
+          "chillout",
+          "peaceful",
+          "atmospheric",
+          "cinematic",
+          "instrumental",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "water",
+          "nature",
+          "scenery",
+          "nature",
+          "flowers"
+        ],
+        "speed": [
+          "verylow",
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_dreamy",
+          "mood_meditative",
+          "mood_inspirational",
+          "mood_happy"
+        ],
+        "visual_stats": {
+          "brightness": 0.434,
+          "saturation": 0.139,
+          "warmth": 0.03
+        }
+      },
+      "match_reasons": [
+        "genres+3(ambient,chillout,piano)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 15.0,
+      "musicinfo_tags": [
+        "ambient",
+        "chillout",
+        "piano",
+        "harp"
+      ],
+      "name": "A Flight At Dusk",
+      "semantic_analysis": {
+        "calmness": 0.712,
+        "dominant_themes": [
+          "wilderness",
+          "flora"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83c\udf3c"
+        ],
+        "energy": 0.325,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "waterfalls",
+          "flowers",
+          "fantas",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "medium",
+      "vartags": [
+        "peaceful"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#waterfalls #flowers #fantas.mp4",
+    "posted_at": "2026-06-04T10:32:19+00:00"
+  },
   "1P5YePlmPyHmNNDun9nUfWQHdN1vIvFKF": {
     "caption": "Where birds roam free across the nature \ud83c\udf3f \ud83d\udc26\n\n#relax #nature #birds #viral #naturelovers #naturephotography #earth #wildlife #fypviral #shortsfeed #2025 #omg\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122114128851283297",
