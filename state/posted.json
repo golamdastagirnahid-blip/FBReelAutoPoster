@@ -4540,6 +4540,112 @@
     "name": "masstiktok_naturebeautyscenery__#GirlsFrontlineFireControl #.mp4",
     "posted_at": "2026-05-25T14:24:04+00:00"
   },
+  "1boFpvNVx24S44mf8QU1B2c-EHbKBnadq": {
+    "caption": "Deep into wild nature \ud83c\udf3f \ud83d\udc96\n\n#fairy #fantasy #magical #naturelovers #naturephotography #earth #wildlife #relaxing #reels\n\n\ud83c\udfb5 Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122116171857283297",
+    "fb_video_id": "2054373825496698",
+    "music_track": {
+      "artist": "Luke",
+      "attribution": "Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1203517&format=mp32&from=JmSfYU525JiYLlPDASyY0A%3D%3D%7Cy4f6n6uYbEMasjNv%2Bf0hmQ%3D%3D",
+      "bpm": null,
+      "duration": 302,
+      "id": "1203517",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.35,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "wild"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative"
+        ],
+        "visual_stats": {
+          "brightness": 0.32,
+          "saturation": 0.185,
+          "warmth": 0.193
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "chillout"
+      ],
+      "name": "Fight in my mind",
+      "semantic_analysis": {
+        "calmness": 0.7,
+        "dominant_themes": [
+          "wilderness",
+          "emotion"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc96"
+        ],
+        "energy": 0.35,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "emotion": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "fairy",
+          "fantasy",
+          "magical",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.225
+      },
+      "speed": "medium",
+      "vartags": [
+        "atmospheric",
+        "atmosperic"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#fairy #fantasy #magical #na (1).mp4",
+    "posted_at": "2026-06-06T05:47:25+00:00"
+  },
   "1cRF3xXYFuUI0aiFf6tyNSdCz1RXOekZy": {
     "caption": "Pure nature, nothing else needed \ud83c\udf3f\n\n#naturelovers #naturephotography #earth #wildlife #birds #goodvibes #healing #reelsfb #heartwarming #wow #relax\n\n\ud83c\udfb5 Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
     "fb_post_id": "122114850117283297",
