@@ -1381,6 +1381,130 @@
     "name": "masstiktok_naturebeautyscenery__#MLBB #WinWithMLBB #slay #ml.mp4",
     "posted_at": "2026-05-27T08:36:02+00:00"
   },
+  "1Aa0lYBiLf9iLDoiRSh_9H_Aei0yfmCrY": {
+    "caption": "The sound of rain in untouched nature \ud83c\udf3f \ud83d\udca7\n\n#raindrops #naturebeauty #rainyday #rainfall #monsoon #naturelovers #viralvideos #birdsofinstagram #wildlifephotography #omg\n\n\ud83c\udfb5 Music: \"As The Sun Begins To Awake\" by Tonepoet via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122116180173283297",
+    "fb_video_id": "1697743884574495",
+    "music_track": {
+      "artist": "Tonepoet",
+      "attribution": "Music: \"As The Sun Begins To Awake\" by Tonepoet via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1530855&format=mp32&from=LfgPBMZiXkD9jeP47iLr4A%3D%3D%7CyadVu%2Fz%2Fwh9DwnFxiCqZ8w%3D%3D",
+      "bpm": null,
+      "duration": 384,
+      "id": "1530855",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.286,
+        "genre_tags": [
+          "ambient",
+          "chillout",
+          "peaceful",
+          "atmospheric",
+          "cinematic",
+          "instrumental"
+        ],
+        "keywords_matched": [
+          "rain",
+          "rain",
+          "nature",
+          "scenery",
+          "nature",
+          "nature"
+        ],
+        "speed": [
+          "verylow",
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_dreamy",
+          "mood_meditative",
+          "mood_inspirational"
+        ],
+        "visual_stats": {
+          "brightness": 0.505,
+          "saturation": 0.414,
+          "warmth": 0.075
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,chillout)",
+        "speed=verylow",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "ambient",
+        "chillout",
+        "filmscore"
+      ],
+      "name": "As The Sun Begins To Awake",
+      "semantic_analysis": {
+        "calmness": 0.75,
+        "dominant_themes": [
+          "wilderness",
+          "water"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udca7"
+        ],
+        "energy": 0.312,
+        "related_tags": [
+          "rainyday",
+          "rainfall",
+          "monsoon",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ],
+          "raindrops": [
+            "rain",
+            "drops"
+          ]
+        },
+        "themes": {
+          "water": 2.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "rain",
+          "drops",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.1
+      },
+      "speed": "verylow",
+      "vartags": [
+        "acoustic",
+        "instrumental",
+        "slow",
+        "sleep"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#raindrops #naturebeauty #ra.mp4",
+    "posted_at": "2026-06-06T08:21:46+00:00"
+  },
   "1AclZmgqUomV-jGVJltEsbQFu-EGCc00n": {
     "caption": "Just nature. Just stillness \ud83c\udf3f\n\n#MLBB9TH #MLBB #boyb #naturelovers #naturephotography #earth #wildlife #videooftheday #viralvideos\n\n\ud83c\udfb5 Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
     "fb_post_id": "122116064241283297",
