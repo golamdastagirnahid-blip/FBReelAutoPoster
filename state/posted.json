@@ -7072,6 +7072,130 @@
     "name": "masstiktok_naturebeautyscenery__#moon #rose #naturebeauty #v.mp4",
     "posted_at": "2026-05-30T04:37:19+00:00"
   },
+  "1sYZZ87sDK2exY1394-78H6U1M-57lxWI": {
+    "caption": "Flowers that grow where nature stays untouched \ud83c\udf3f \ud83c\udf3c\n\n#flowers #sunset #paradise #flower #bloom #blooming #petals #trending #naturephotography #viralvideos #heartwarming #instagood\n\n\ud83c\udfb5 Music: \"Storm\" by A.K.1974 via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122116337205283297",
+    "fb_video_id": "1341347921430262",
+    "music_track": {
+      "artist": "A.K.1974",
+      "attribution": "Music: \"Storm\" by A.K.1974 via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=171149&format=mp32&from=FIiCCMfh4K8xlC9w%2BiLFUQ%3D%3D%7Cq2VdQjtdR7xGpvf9JtPvIg%3D%3D",
+      "bpm": null,
+      "duration": 163,
+      "id": "171149",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.388,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "emotional",
+          "piano",
+          "orchestral",
+          "acoustic"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "sunset",
+          "flowers"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_uplifting",
+          "mood_dreamy",
+          "mood_happy"
+        ],
+        "visual_stats": {
+          "brightness": 0.513,
+          "saturation": 0.175,
+          "warmth": 0.151
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "electronic"
+      ],
+      "name": "Storm",
+      "semantic_analysis": {
+        "calmness": 0.72,
+        "dominant_themes": [
+          "wilderness",
+          "flora"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83c\udf3c"
+        ],
+        "energy": 0.32,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "sunsetlovers",
+          "goldenhour",
+          "skyporn",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "sky": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "flowers",
+          "sunset",
+          "paradise",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.36
+      },
+      "speed": "medium",
+      "vartags": [
+        "lounge",
+        "peaceful",
+        "happy"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#flowers #sunset #paradise #.mp4",
+    "posted_at": "2026-06-07T14:19:41+00:00"
+  },
   "1u72_0gb6cFjxJd6yk3zfk7pCawjyVGsB": {
     "fb_post_id": "122114116725283297",
     "fb_video_id": "1907216903315759",
