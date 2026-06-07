@@ -2055,6 +2055,109 @@
     "name": "masstiktok_naturebeautyscenery__#naturebeauty #videobackgrou.mp4",
     "posted_at": "2026-05-23T14:14:48+00:00"
   },
+  "1CtzD6XTs6ld-eBMKGBsrimI_j8ZsfcEI": {
+    "caption": "Untouched nature \u2014 some places stay quiet \ud83c\udf3f\n\n#relapsetime #relaps #fredri #naturelovers #naturephotography #earth #wildlife #fypviral\n\n\ud83c\udfb5 Music: \"ti techesh\" by Loufo via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122116321341283297",
+    "fb_video_id": "1295646349304959",
+    "music_track": {
+      "artist": "Loufo",
+      "attribution": "Music: \"ti techesh\" by Loufo via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1434709&format=mp32&from=UFIjnY1syddhWpm3DCCE4g%3D%3D%7CK5O9Fa2%2Bff7cmyW7%2Bweu0A%3D%3D",
+      "bpm": null,
+      "duration": 229,
+      "id": "1434709",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.345,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative"
+        ],
+        "visual_stats": {
+          "brightness": 0.303,
+          "saturation": 0.093,
+          "warmth": -0.042
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "chillout",
+        "ambient"
+      ],
+      "name": "ti techesh",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "relapsetime",
+          "relaps",
+          "fredri",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "happy",
+        "space",
+        "cloudrap"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#relapsetime #relaps #fredri.mp4",
+    "posted_at": "2026-06-07T09:57:51+00:00"
+  },
   "1EgP0DqFmyssdd35DlQVQOnLrDVKN3pxZ": {
     "caption": "Wild nature blooming with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #vide #flower #bloom #blooming #petals #babybirds #mood #fbreels #wildlife #instagood\n\n\ud83c\udfb5 Music: \"Tales of Spring\" by Martin Eigenmann via Jamendo (CC-BY-SA)",
     "fb_post_id": "122114163843283297",
