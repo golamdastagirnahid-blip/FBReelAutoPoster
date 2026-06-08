@@ -5529,6 +5529,125 @@
     "name": "masstiktok_naturebeautyscenery__#flowers #naturebeauty #vide (1).mp4",
     "posted_at": "2026-05-26T17:02:32+00:00"
   },
+  "1e0sJQy_JzGUnXZSBx6OMmMsbprnC4uEe": {
+    "caption": "Where butterfly roam free across the nature \ud83c\udf3f \ud83d\udc26\n\n#butterfly #flowers #natureb #flower #bloom #blooming #petals #instagood #instadaily #shortsfeed\n\n\ud83c\udfb5 Music: \"Winter Is Coming\" by Andrey Avkhimovich via Jamendo (CC-BY)",
+    "fb_post_id": "122116408767283297",
+    "fb_video_id": "2205876126868407",
+    "music_track": {
+      "artist": "Andrey Avkhimovich",
+      "attribution": "Music: \"Winter Is Coming\" by Andrey Avkhimovich via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1167648&format=mp32&from=Xdh%2BVUEnyscuoltFSEBdbg%3D%3D%7CckBCIUOXWnrGg9z7%2B92wHA%3D%3D",
+      "bpm": null,
+      "duration": 239,
+      "id": "1167648",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.358,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "nature",
+          "scenery",
+          "nature",
+          "butterfly",
+          "flowers"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.4,
+          "saturation": 0.158,
+          "warmth": 0.125
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "world",
+        "percussion"
+      ],
+      "name": "Winter Is Coming",
+      "semantic_analysis": {
+        "calmness": 0.72,
+        "dominant_themes": [
+          "wilderness",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.32,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "butterfly",
+          "flowers",
+          "natureb",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.3
+      },
+      "speed": "medium",
+      "vartags": [
+        "peaceful",
+        "hangdrum"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#butterfly #flowers #natureb.mp4",
+    "posted_at": "2026-06-08T09:56:49+00:00"
+  },
   "1eFUn3URlTbXJe-PlGIzRvBPwG-tBgeO-": {
     "caption": "Where birds roam free across the nature \ud83c\udf3f \ud83d\udc26\n\n#birds #flowers #naturebeaut #bird #birdsofinstagram #wildlife #birdphotography #fbreels #reelsfb\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122114316417283297",
