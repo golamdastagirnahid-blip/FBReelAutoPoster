@@ -7318,6 +7318,126 @@
     "name": "masstiktok_naturebeautyscenery__#MLBB9TH #MLBB.mp4",
     "posted_at": "2026-05-14T18:33:38+00:00"
   },
+  "1rttCyuboA4WtIT0-ZmdRzyjOLmcFe0UN": {
+    "caption": "Flowers that grow where nature stays untouched \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturespring #fant #flower #bloom #blooming #petals #satisfying #heartwarming #reelsinstagram\n\n\ud83c\udfb5 Music: \"billy2012\" by Adragante via Jamendo (CC-BY)",
+    "fb_post_id": "122116526775283297",
+    "fb_video_id": "1544141793828915",
+    "music_track": {
+      "artist": "Adragante",
+      "attribution": "Music: \"billy2012\" by Adragante via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=941486&format=mp32&from=WZ1x0RnSIiK%2BYymoGHYdsQ%3D%3D%7CKFiZgIvn%2FiC1F8lRxtL%2Faw%3D%3D",
+      "bpm": null,
+      "duration": 188,
+      "id": "941486",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.36,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "flowers",
+          "spring",
+          "spring"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.409,
+          "saturation": 0.178,
+          "warmth": 0.022
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "harp",
+        "strings"
+      ],
+      "name": "billy2012",
+      "semantic_analysis": {
+        "calmness": 0.712,
+        "dominant_themes": [
+          "wilderness",
+          "flora"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83c\udf3c"
+        ],
+        "energy": 0.325,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ],
+          "naturespring": [
+            "nature",
+            "spring"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "flowers",
+          "nature",
+          "spring",
+          "fant",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "medium",
+      "vartags": [],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#flowers #naturespring #fant.mp4",
+    "posted_at": "2026-06-09T05:51:20+00:00"
+  },
   "1ryWWhdYsJ0qm5N45lm54pnAOumZu910b": {
     "caption": "Wild nature under a painted moon \ud83c\udf3f \ud83c\udf05\n\n#moon #rose #naturebeauty #naturelovers #naturephotography #earth #wildlife #relaxingvideo\n\n\ud83c\udfb5 Music: \"Tales of Spring\" by Martin Eigenmann via Jamendo (CC-BY-SA)",
     "fb_post_id": "122115555165283297",
