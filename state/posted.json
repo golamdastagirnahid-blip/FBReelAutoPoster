@@ -2650,6 +2650,136 @@
     "name": "masstiktok_naturebeautyscenery__#heart #amazing #livewallpap.mp4",
     "posted_at": "2026-06-10T17:37:40+00:00"
   },
+  "1DaFsJHNDmrzB9JnbTJ2cUdnRzoT3RTus": {
+    "caption": "Where birds roam free across the nature \ud83c\udf3f \ud83d\udc26\n\n#birds #flowers #naturebeaut #bird #birdsofinstagram #wildlife #birdphotography #viral #fypviral #amazing\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122116772223283297",
+    "fb_video_id": "1024305553390541",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=f93qY0pudEPeYsVlK2DbBA%3D%3D%7CQ0GeY9O2EtApxsxEMbgBXg%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.385,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "nature",
+          "scenery",
+          "nature",
+          "birds",
+          "flowers"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.544,
+          "saturation": 0.157,
+          "warmth": 0.12
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.68,
+        "dominant_themes": [
+          "wilderness",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.35,
+        "related_tags": [
+          "bird",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography",
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "birds",
+          "flowers",
+          "naturebeaut",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.26
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#birds #flowers #naturebeaut.mp4",
+    "posted_at": "2026-06-12T05:06:43+00:00"
+  },
   "1EgP0DqFmyssdd35DlQVQOnLrDVKN3pxZ": {
     "caption": "Wild nature blooming with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #vide #flower #bloom #blooming #petals #babybirds #mood #fbreels #wildlife #instagood\n\n\ud83c\udfb5 Music: \"Tales of Spring\" by Martin Eigenmann via Jamendo (CC-BY-SA)",
     "fb_post_id": "122114163843283297",
