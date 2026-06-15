@@ -1,10 +1,12 @@
 # Reel Health Report
 
-Generated: 2026-06-14T07:56:34+00:00
+Generated: 2026-06-15T09:33:32+00:00
 Total checked: 20
 
 | Posted (UTC) | Status | Video ID | File name | Issues | Permalink |
 |---|---|---|---|---|---|
+| 2026-06-14T15:27:19+00:00 | **ERROR** | `1326391429463240` | masstiktok_naturebeautyscenery__#MLBB #WinWithMLBB #mlbbcont… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
+| 2026-06-14T11:24:49+00:00 | **ERROR** | `965878656275803` | masstiktok_naturebeautyscenery__#naturebeauty #naturelover #… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-06-14T05:07:09+00:00 | **ERROR** | `995213133334476` | masstiktok_naturebeautyscenery__#GirlsGame #Game #TiktokMins… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-06-13T16:12:39+00:00 | **ERROR** | `1543155840579453` | masstiktok_naturebeautyscenery__#flowers #magical #fantasy #… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-06-13T10:51:00+00:00 | **ERROR** | `985055794430195` | masstiktok_naturebeautyscenery__#rain #naturebeauty #videoba… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
@@ -23,5 +25,3 @@ Total checked: 20
 | 2026-06-08T17:38:37+00:00 | **ERROR** | `998993079345501` | masstiktok_naturebeautyscenery__#naturebeauty #naturelover #… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-06-08T14:28:08+00:00 | **ERROR** | `1041178438335006` | masstiktok_naturebeautyscenery__#rain #naturebeauty #naturel… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-06-08T09:56:49+00:00 | **ERROR** | `2205876126868407` | masstiktok_naturebeautyscenery__#butterfly #flowers #natureb… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
-| 2026-06-07T14:19:41+00:00 | **ERROR** | `1341347921430262` | masstiktok_naturebeautyscenery__#flowers #sunset #paradise #… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
-| 2026-06-07T09:57:51+00:00 | **ERROR** | `1295646349304959` | masstiktok_naturebeautyscenery__#relapsetime #relaps #fredri… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
