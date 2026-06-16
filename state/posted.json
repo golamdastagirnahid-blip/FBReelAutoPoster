@@ -6739,6 +6739,127 @@
     "name": "masstiktok_naturebeautyscenery__#GirlsFrontlineFireControl #.mp4",
     "posted_at": "2026-05-25T14:24:04+00:00"
   },
+  "1bYaq-OEgqnza30B-aGSiRLN7i8SJIldK": {
+    "caption": "Pure nature, painted with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #natu #flower #bloom #blooming #petals #birds #facebookreels #naturelovers #relaxing #2025\n\n\ud83c\udfb5 Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122117116437283297",
+    "fb_video_id": "988500907278911",
+    "music_track": {
+      "artist": "Luke",
+      "attribution": "Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1202870&format=mp32&from=NZQtjdMVuErfuBQyLduOJQ%3D%3D%7CHbe5Pg%2BLAgvMcaidpQkZGw%3D%3D",
+      "bpm": null,
+      "duration": 198,
+      "id": "1202870",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.36,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "flowers"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.402,
+          "saturation": 0.233,
+          "warmth": 0.031
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "filmscore",
+        "rock"
+      ],
+      "name": "freedom",
+      "semantic_analysis": {
+        "calmness": 0.712,
+        "dominant_themes": [
+          "wilderness",
+          "flora"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83c\udf3c"
+        ],
+        "energy": 0.325,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "flowers",
+          "nature",
+          "beauty",
+          "natu",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "medium",
+      "vartags": [
+        "happy",
+        "uplifting",
+        "adventure",
+        "liberty"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#flowers #naturebeauty #natu (1).mp4",
+    "posted_at": "2026-06-16T10:37:52+00:00"
+  },
   "1boFpvNVx24S44mf8QU1B2c-EHbKBnadq": {
     "caption": "Deep into wild nature \ud83c\udf3f \ud83d\udc96\n\n#fairy #fantasy #magical #naturelovers #naturephotography #earth #wildlife #relaxing #reels\n\n\ud83c\udfb5 Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
     "fb_post_id": "122116171857283297",
