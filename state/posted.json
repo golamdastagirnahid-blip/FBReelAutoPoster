@@ -6992,6 +6992,124 @@
     "name": "masstiktok_naturebeautyscenery__#fireplace #cozy #videobackg.mp4",
     "posted_at": "2026-06-03T17:18:28+00:00"
   },
+  "1bDUc7C2vyZsvxgBWJCJ33iMoEKnaAPMr": {
+    "caption": "Pure nature, painted with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #live #flower #bloom #blooming #petals #feelgood #naturelovers\n\n\ud83c\udfb5 Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122117307873283297",
+    "fb_video_id": "850006764469075",
+    "music_track": {
+      "artist": "Luke",
+      "attribution": "Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1203517&format=mp32&from=8vjAhN46e6kORex4SQ3fiQ%3D%3D%7Cbju%2FQQL%2F7WBDz6crNRbYyA%3D%3D",
+      "bpm": null,
+      "duration": 302,
+      "id": "1203517",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.36,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "flowers"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.414,
+          "saturation": 0.215,
+          "warmth": 0.065
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "chillout"
+      ],
+      "name": "Fight in my mind",
+      "semantic_analysis": {
+        "calmness": 0.712,
+        "dominant_themes": [
+          "wilderness",
+          "flora"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83c\udf3c"
+        ],
+        "energy": 0.325,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "flowers",
+          "nature",
+          "beauty",
+          "live",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "medium",
+      "vartags": [
+        "atmospheric",
+        "atmosperic"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#flowers #naturebeauty #live.mp4",
+    "posted_at": "2026-06-18T16:58:34+00:00"
+  },
   "1bLK66Y-TIK29SMx-sV_C8O1w5ogsLkVa": {
     "caption": "Where birds roam free across the nature \ud83d\udc26 \ud83c\udf3f\n\n#nature #birds #relax #birdlover #naturelovers #naturephotography #earth #wildlife #heartwarming\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122115562425283297",
