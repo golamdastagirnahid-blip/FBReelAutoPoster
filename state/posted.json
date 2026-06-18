@@ -1176,6 +1176,115 @@
     "name": "masstiktok_naturebeautyscenery__#birds #naturespring #flower.mp4",
     "posted_at": "2026-05-18T04:54:14+00:00"
   },
+  "14H-WY1UnZBFtU6VeXWLLXZU8XvyRQeJF": {
+    "caption": "Deep into wild nature \ud83c\udf3f\n\n#road #naturebeauty #naturel #naturelovers #naturephotography #earth #wildlife #fyp #birdlover\n\n\ud83c\udfb5 Music: \"Acqua\" by Ulisse via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122117265753283297",
+    "fb_video_id": "1871971290137045",
+    "music_track": {
+      "artist": "Ulisse",
+      "attribution": "Music: \"Acqua\" by Ulisse via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1069966&format=mp32&from=ZsOekb9EsjSh7ETvwgk%2Fuw%3D%3D%7CLsFahVj6aniX3ImCnZgQiA%3D%3D",
+      "bpm": null,
+      "duration": 392,
+      "id": "1069966",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.24499999999999997,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "wild"
+        ],
+        "speed": [
+          "low",
+          "medium",
+          "verylow"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_dark"
+        ],
+        "visual_stats": {
+          "brightness": 0.252,
+          "saturation": 0.146,
+          "warmth": -0.004
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=low",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "electronic"
+      ],
+      "name": "Acqua",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "road",
+          "nature",
+          "beauty",
+          "naturel",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "low",
+      "vartags": [
+        "cinematic"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#road #naturebeauty #naturel.mp4",
+    "posted_at": "2026-06-18T05:21:23+00:00"
+  },
   "16QoKSKDR9S-oI_jTjzgZ4sod-rEd8s7M": {
     "fb_post_id": "122113998669283297",
     "name": "masstiktok_naturebeautyscenery__#orchids #flowers #naturebea (1).mp4",
