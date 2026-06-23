@@ -3833,6 +3833,110 @@
     "name": "masstiktok_naturebeautyscenery__#birds #flowers #naturebeaut.mp4",
     "posted_at": "2026-06-12T05:06:43+00:00"
   },
+  "1Ee1QLPti5o2ece1Na3vqI47tgs-Nl2ZN": {
+    "caption": "Deep into wild nature \ud83c\udf3f\n\n#cflph #crossfirelegends #naturelovers #naturephotography #earth #wildlife #reelsfb #birdlover\n\n\ud83c\udfb5 Music: \"toutouig2012\" by Adragante via Jamendo (CC-BY)",
+    "fb_post_id": "122117666865283297",
+    "fb_video_id": "1523367282587191",
+    "music_track": {
+      "artist": "Adragante",
+      "attribution": "Music: \"toutouig2012\" by Adragante via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=941482&format=mp32&from=vYXROXdhWouu99csdOtLgA%3D%3D%7CWhS3lxrV%2Bfgd1pdp8xG4fA%3D%3D",
+      "bpm": null,
+      "duration": 156,
+      "id": "941482",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.345,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "wild"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative"
+        ],
+        "visual_stats": {
+          "brightness": 0.44,
+          "saturation": 0.075,
+          "warmth": -0.008
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "harp",
+        "strings"
+      ],
+      "name": "toutouig2012",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "cflph",
+          "crossfirelegends",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "instrumental",
+        "neutral"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#cflph #crossfirelegends.mp4",
+    "posted_at": "2026-06-23T08:06:40+00:00"
+  },
   "1EgP0DqFmyssdd35DlQVQOnLrDVKN3pxZ": {
     "caption": "Wild nature blooming with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #vide #flower #bloom #blooming #petals #babybirds #mood #fbreels #wildlife #instagood\n\n\ud83c\udfb5 Music: \"Tales of Spring\" by Martin Eigenmann via Jamendo (CC-BY-SA)",
     "fb_post_id": "122114163843283297",
