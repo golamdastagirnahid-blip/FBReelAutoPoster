@@ -11256,6 +11256,129 @@
     "name": "masstiktok_muskoluk1__Beautiful fantasy bird in nature .mp4",
     "posted_at": "2026-05-24T14:11:27+00:00"
   },
+  "1pRC8XhhaURvNoPWxMXhtZHYByxts0Bi4": {
+    "caption": "Where birds roam free across the nature \ud83c\udf3f \ud83d\udc26\n\n#birds #naturebeauty #videob #bird #birdsofinstagram #wildlife #birdphotography #viralreels #reelsviral #birdwatching #fbreels #adorableanimals\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122117767731283297",
+    "fb_video_id": "1565626001743723",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=GL0rAPi8i6CTL2gBmNhNhA%3D%3D%7CgYcHCrM1TljeKiug53TWVA%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.389,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "birds"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting"
+        ],
+        "visual_stats": {
+          "brightness": 0.455,
+          "saturation": 0.148,
+          "warmth": 0.106
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.675,
+        "dominant_themes": [
+          "wilderness",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.362,
+        "related_tags": [
+          "bird",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "birds",
+          "nature",
+          "beauty",
+          "videob",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#birds #naturebeauty #videob (3).mp4",
+    "posted_at": "2026-06-24T15:25:35+00:00"
+  },
   "1ptvzf_yA80XN2GKN7yfCt25dZFTJI5Jk": {
     "caption": "Birds of the wild nature \ud83c\udf3f \ud83d\udc26\n\n#birds #naturebeauty #relaxi #bird #birdsofinstagram #wildlife #birdphotography #adorableanimals #healing #viralvideos #animals #peaceful\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122117377587283297",
