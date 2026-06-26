@@ -10387,6 +10387,114 @@
     "name": "masstiktok_naturebeautyscenery__#pathofhappiness #naturebeau.mp4",
     "posted_at": "2026-06-24T12:35:34+00:00"
   },
+  "1kawSYdKwVCJ8MjMJOfheZK7Xpwu0g6lb": {
+    "caption": "Where birds roam free across the nature \ud83d\udc26 \ud83c\udf3f\n\n#viral #birds #relax #nature #bird #birdsofinstagram #wildlife #birdphotography\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122117929623283297",
+    "fb_video_id": "1714711559817674",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=2t4ql7dOagapi2jLYN4L5Q%3D%3D%7CjL9YDGp3BoUTgufzWYIpOg%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.4,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk"
+        ],
+        "keywords_matched": [
+          "nature",
+          "birds"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting"
+        ],
+        "visual_stats": {
+          "brightness": 0.468,
+          "saturation": 0.231,
+          "warmth": 0.104
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.625,
+        "dominant_themes": [
+          "wildlife",
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83d\udc26",
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.4,
+        "related_tags": [
+          "bird",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography",
+          "naturelovers",
+          "naturephotography",
+          "earth"
+        ],
+        "splits": {},
+        "themes": {
+          "wilderness": 1.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "viral",
+          "birds",
+          "relax",
+          "nature",
+          "muskoluk",
+          "masstiktok"
+        ],
+        "warmth": 0.15
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__#viral #birds #relax #nature.mp4",
+    "posted_at": "2026-06-26T15:43:05+00:00"
+  },
   "1l6qfNm2Mijdm9WnvLUxZaKX0QgKRteqg": {
     "caption": "Where birds meet the rainy\n\n#bird #birdsofinstagram #wildlife #birdphotography #reelsviral #love #trendingreels #shortsfeed #birds #omg #explorepage #instagood\n\n\ud83c\udfb5 Music: \"MELANCOLIA\" by PATROUX via Jamendo (CC-BY-SA)",
     "fb_post_id": "122114959125283297",
