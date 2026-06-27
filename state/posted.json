@@ -1034,6 +1034,129 @@
     "name": "masstiktok_naturebeautyscenery__#flowers #paradise #naturebe.mp4",
     "posted_at": "2026-06-20T06:44:11+00:00"
   },
+  "13gsRteuugGPgXpmFgelz8fShTzO8OEsJ": {
+    "caption": "Wild nature blooming with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #natu #flower #bloom #blooming #petals #videooftheday #relaxingvideo #fypviral\n\n\ud83c\udfb5 Music: \"Coming night\" by Doppelganger via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122118025287283297",
+    "fb_video_id": "1404122761549141",
+    "music_track": {
+      "artist": "Doppelganger",
+      "attribution": "Music: \"Coming night\" by Doppelganger via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1742823&format=mp32&from=%2F4ovIWpO5%2BC7%2FzM4yzapqw%3D%3D%7CsYRzuWRBWchgBZ1XbJhjeA%3D%3D",
+      "bpm": null,
+      "duration": 215,
+      "id": "1742823",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.36,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "wild",
+          "flowers",
+          "bloom"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.42,
+          "saturation": 0.163,
+          "warmth": -0.116
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=low",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "electronic",
+        "ambient",
+        "filmscore",
+        "computer"
+      ],
+      "name": "Coming night",
+      "semantic_analysis": {
+        "calmness": 0.712,
+        "dominant_themes": [
+          "wilderness",
+          "flora"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83c\udf3c"
+        ],
+        "energy": 0.325,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "flowers",
+          "nature",
+          "beauty",
+          "natu",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "low",
+      "vartags": [
+        "sad",
+        "cinematic",
+        "nostalgic"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#flowers #naturebeauty #natu (2).mp4",
+    "posted_at": "2026-06-27T16:44:18+00:00"
+  },
   "13jnZi4_QmAEsscv3EDeaUMnvwu2clc2F": {
     "caption": "Wild nature blooming with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #vide #flower #bloom #blooming #petals #viralreels #fbreels #explorepage #satisfying\n\n\ud83c\udfb5 Music: \"new wave2012\" by Adragante via Jamendo (CC-BY)",
     "fb_post_id": "122115751737283297",
