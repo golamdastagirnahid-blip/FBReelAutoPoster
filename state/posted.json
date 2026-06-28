@@ -6424,6 +6424,111 @@
     "name": "masstiktok_naturebeautyscenery__#MLBB9TH #MLBB #wherehaveyou.mp4",
     "posted_at": "2026-05-15T09:00:02+00:00"
   },
+  "1O4WCAM3zTfT1UIVTJgnEnjiREfqbNMpf": {
+    "caption": "This baby birds family will melt your heart \ud83d\udc96 \ud83d\udc26\n\n#bird #birdsofinstagram #wildlife #birdphotography #cuteanimals #beautiful #omg #naturephotography #viralvideos #explore #asmr #feelgood\n\n\ud83c\udfb5 Music: \"Learn to Fly (Instrumental Version)\" by Josh Woodward (Instrumental Versions) via Jamendo (CC-BY)",
+    "fb_post_id": "122118074811283297",
+    "fb_video_id": "1067555059155909",
+    "music_track": {
+      "artist": "Josh Woodward (Instrumental Versions)",
+      "attribution": "Music: \"Learn to Fly (Instrumental Version)\" by Josh Woodward (Instrumental Versions) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=628971&format=mp32&from=fD77NMjZHgY8LB9XDUQgjg%3D%3D%7CcKZ44WOkJo7REFqbL9xoow%3D%3D",
+      "bpm": null,
+      "duration": 204,
+      "id": "628971",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.443,
+        "genre_tags": [
+          "acoustic",
+          "instrumental",
+          "light",
+          "gentle",
+          "folk",
+          "piano",
+          "romantic",
+          "ambient"
+        ],
+        "keywords_matched": [
+          "baby",
+          "birds",
+          "heart"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_happy",
+          "mood_uplifting",
+          "mood_relaxing",
+          "mood_romantic",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.486,
+          "saturation": 0.088,
+          "warmth": 0.042
+        }
+      },
+      "match_reasons": [
+        "genres+1(folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "folk",
+        "strings",
+        "percussion"
+      ],
+      "name": "Learn to Fly (Instrumental Version)",
+      "semantic_analysis": {
+        "calmness": 0.625,
+        "dominant_themes": [
+          "emotion",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83d\udc96",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.425,
+        "related_tags": [
+          "bird",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography"
+        ],
+        "splits": {},
+        "themes": {
+          "emotion": 1.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "muskoluk",
+          "bunch",
+          "pink",
+          "baby",
+          "birds",
+          "hugging",
+          "masstiktok"
+        ],
+        "warmth": 0.3
+      },
+      "speed": "medium",
+      "vartags": [
+        "happy",
+        "acoustic",
+        "instrumental",
+        "neutral"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__ A bunch of pink baby birds hugging  #.mp4",
+    "posted_at": "2026-06-28T09:50:52+00:00"
+  },
   "1OxgXTu-1hZuRzJ40BAJOP8Vl9XDqwnoQ": {
     "caption": "Where birds roam free across the nature \ud83d\udc26 \ud83c\udf3f\n\n#relax #birds #nature #birdlover #bird #birdsofinstagram #wildlife #birdphotography #fypviral\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122116859739283297",
