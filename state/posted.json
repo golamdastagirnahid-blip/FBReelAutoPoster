@@ -7343,6 +7343,117 @@
     "name": "masstiktok_muskoluk1__#2025recap.mp4",
     "posted_at": "2026-05-15T09:22:15+00:00"
   },
+  "1RRkm2VY_1fk-bdxgiUtRqoMyd8Ptqz6j": {
+    "caption": "This lover birds family will melt your heart \ud83d\udc26 \ud83d\udc96\n\n#relaxing #birds #birdlover #foryou #bird #birdsofinstagram #wildlife #birdphotography #photooftheday #feelgood #shorts #instadaily\n\n\ud83c\udfb5 Music: \"Quand je serai grand - INSTRUMENTAL VERSION \" by L\u00f6hstana David via Jamendo (CC-BY)",
+    "fb_post_id": "122118160767283297",
+    "fb_video_id": "2556987511396580",
+    "music_track": {
+      "artist": "L\u00f6hstana David",
+      "attribution": "Music: \"Quand je serai grand - INSTRUMENTAL VERSION \" by L\u00f6hstana David via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=785434&format=mp32&from=t535b274bBe%2Fqy6ayaEHVw%3D%3D%7CxCcTP6oua%2BCoPRU5Gx0yVg%3D%3D",
+      "bpm": null,
+      "duration": 191,
+      "id": "785434",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.45,
+        "genre_tags": [
+          "acoustic",
+          "instrumental",
+          "light",
+          "gentle",
+          "folk",
+          "piano",
+          "romantic",
+          "ambient"
+        ],
+        "keywords_matched": [
+          "birds",
+          "bird",
+          "bird",
+          "love",
+          "love",
+          "heart"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_happy",
+          "mood_uplifting",
+          "mood_relaxing",
+          "mood_romantic",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.422,
+          "saturation": 0.263,
+          "warmth": -0.297
+        }
+      },
+      "match_reasons": [
+        "genres+1(folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "reggae",
+        "folk",
+        "percussion"
+      ],
+      "name": "Quand je serai grand - INSTRUMENTAL VERSION ",
+      "semantic_analysis": {
+        "calmness": 0.55,
+        "dominant_themes": [
+          "wildlife",
+          "emotion"
+        ],
+        "emojis": [
+          "\ud83d\udc26",
+          "\ud83d\udc96"
+        ],
+        "energy": 0.45,
+        "related_tags": [
+          "bird",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography"
+        ],
+        "splits": {
+          "birdlover": [
+            "bird",
+            "lover"
+          ]
+        },
+        "themes": {
+          "emotion": 1.0,
+          "wildlife": 2.0
+        },
+        "tokens": [
+          "relaxing",
+          "birds",
+          "bird",
+          "lover",
+          "foryou",
+          "muskoluk",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "instrumental"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__#relaxing #birds #birdlover #foryou #a.mp4",
+    "posted_at": "2026-06-29T09:58:53+00:00"
+  },
   "1SdbZsHiQxHHgkSkY4k5xTp7FadotP5X6": {
     "caption": "Flowers that grow where nature stays untouched \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #rela #flower #bloom #blooming #petals #healing\n\n\ud83c\udfb5 Music: \"Sweet Dream\" by Lamass via Jamendo (CC-BY-SA)",
     "fb_post_id": "122117225379283297",
