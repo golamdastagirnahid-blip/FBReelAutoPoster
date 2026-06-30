@@ -4395,6 +4395,120 @@
     "name": "masstiktok_naturebeautyscenery__#birds #flowers #naturebeaut.mp4",
     "posted_at": "2026-06-12T05:06:43+00:00"
   },
+  "1DtV5O4gYPpGAkl14WwPihQU8RaG0Mvwe": {
+    "caption": "Pure nature, nothing else needed \ud83c\udf3f \ud83d\udc96\n\n#naturelovers #naturephotography #earth #wildlife #reelsinstagram #satisfying #fbreels #mood #fyp #shortsfeed #beautiful\n\n\ud83c\udfb5 Music: \"Sweet Dream\" by Lamass via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122118233931283297",
+    "fb_video_id": "2230355944445072",
+    "music_track": {
+      "artist": "Lamass",
+      "attribution": "Music: \"Sweet Dream\" by Lamass via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=966519&format=mp32&from=DD1L5eaJ6uOvbI%2F8R9DtCA%3D%3D%7Cus7QHn2RaqZwruqRG%2Bfp4g%3D%3D",
+      "bpm": null,
+      "duration": 364,
+      "id": "966519",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.389,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "piano",
+          "romantic",
+          "acoustic"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "heart"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_romantic",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.303,
+          "saturation": 0.241,
+          "warmth": 0.29
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "chillout",
+        "ambient",
+        "synthesizer",
+        "guitar"
+      ],
+      "name": "Sweet Dream",
+      "semantic_analysis": {
+        "calmness": 0.688,
+        "dominant_themes": [
+          "wilderness",
+          "emotion"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc96"
+        ],
+        "energy": 0.362,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "emotion": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "nature",
+          "beauty",
+          "scenery",
+          "happy",
+          "heart",
+          "enjoy",
+          "masstiktok",
+          "day",
+          "all"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "medium",
+      "vartags": [
+        "peaceful"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__happy heart day to all enjoy.mp4",
+    "posted_at": "2026-06-30T06:28:11+00:00"
+  },
   "1Ee1QLPti5o2ece1Na3vqI47tgs-Nl2ZN": {
     "caption": "Deep into wild nature \ud83c\udf3f\n\n#cflph #crossfirelegends #naturelovers #naturephotography #earth #wildlife #reelsfb #birdlover\n\n\ud83c\udfb5 Music: \"toutouig2012\" by Adragante via Jamendo (CC-BY)",
     "fb_post_id": "122117666865283297",
