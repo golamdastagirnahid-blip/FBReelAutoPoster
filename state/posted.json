@@ -7428,6 +7428,107 @@
     "name": "masstiktok_naturebeautyscenery__#MLBB #MLBB9TH #vainglory #t.mp4",
     "posted_at": "2026-05-30T14:16:01+00:00"
   },
+  "1QAQwG6iAxofvk8DRFkWbJaf2LIS974Ku": {
+    "caption": "Just nature. Just stillness \ud83c\udf3f\n\n#cflph #crossfirelegends #naturelovers #naturephotography #earth #wildlife #reels #birdsofinstagram #viralreels\n\n\ud83c\udfb5 Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122118264909283297",
+    "fb_video_id": "4101049730196264",
+    "music_track": {
+      "artist": "Luke",
+      "attribution": "Music: \"Fight in my mind\" by Luke via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1203517&format=mp32&from=IHP21fjb09CjV1p8YcoToQ%3D%3D%7Cz2tXQJEk3AYucGbMNc6XJw%3D%3D",
+      "bpm": null,
+      "duration": 302,
+      "id": "1203517",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.345,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative"
+        ],
+        "visual_stats": {
+          "brightness": 0.318,
+          "saturation": 0.034,
+          "warmth": 0.042
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "chillout"
+      ],
+      "name": "Fight in my mind",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "cflph",
+          "crossfirelegends",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "atmospheric",
+        "atmosperic"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#cflph #crossfirelegends #hi (1).mp4",
+    "posted_at": "2026-06-30T15:13:24+00:00"
+  },
   "1QXXiwUT6dxklWRCwMpYP3Ol_YHbXRDI2": {
     "caption": "Birds of the wild nature \ud83c\udf3f \ud83d\udc26\n\n#birds #naturebeauty #videob #bird #birdsofinstagram #wildlife #birdphotography #heartwarming\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122117698095283297",
