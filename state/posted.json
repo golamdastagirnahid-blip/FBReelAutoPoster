@@ -14000,6 +14000,119 @@
     "name": "masstiktok_naturebeautyscenery__#naturebeauty #relaxing #vid.mp4",
     "posted_at": "2026-06-26T08:27:19+00:00"
   },
+  "1r8JuGw0pTxMq3qJSRAOaWBkZ2AmBIJjb": {
+    "caption": "Tiny bird family \u2014 they will steal your heart \ud83d\udc26 \ud83d\udc96\n\n#birdlover #foryou #relaxing #birds #birdsofinstagram #wildlife #birdphotography #adorableanimals\n\n\ud83c\udfb5 Music: \"Rurik\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122118471171283297",
+    "fb_video_id": "1410886030863343",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Rurik\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1504684&format=mp32&from=ZQORzjY1GMDOkETk4HFAhQ%3D%3D%7CQwdBm1nPveoVv3%2F8XPLeCQ%3D%3D",
+      "bpm": null,
+      "duration": 289,
+      "id": "1504684",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.45,
+        "genre_tags": [
+          "acoustic",
+          "instrumental",
+          "light",
+          "gentle",
+          "folk",
+          "piano",
+          "romantic",
+          "ambient"
+        ],
+        "keywords_matched": [
+          "bird",
+          "bird",
+          "love",
+          "love",
+          "heart"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_happy",
+          "mood_uplifting",
+          "mood_relaxing",
+          "mood_romantic",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.381,
+          "saturation": 0.192,
+          "warmth": -0.197
+        }
+      },
+      "match_reasons": [
+        "genres+1(folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "folk",
+        "dance",
+        "celtic"
+      ],
+      "name": "Rurik",
+      "semantic_analysis": {
+        "calmness": 0.55,
+        "dominant_themes": [
+          "wildlife",
+          "emotion"
+        ],
+        "emojis": [
+          "\ud83d\udc26",
+          "\ud83d\udc96"
+        ],
+        "energy": 0.45,
+        "related_tags": [
+          "birds",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography"
+        ],
+        "splits": {
+          "birdlover": [
+            "bird",
+            "lover"
+          ]
+        },
+        "themes": {
+          "emotion": 1.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "bird",
+          "lover",
+          "foryou",
+          "relaxing",
+          "muskoluk",
+          "masstiktok",
+          "fyp",
+          "nat"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "instrumental",
+        "sad",
+        "ambientmusic"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__#birdlover #foryou #fyp #relaxing #nat.mp4",
+    "posted_at": "2026-07-03T08:30:38+00:00"
+  },
   "1rOEx_ZQFZJCFrsnCRDhgDl9aOxCbpj5z": {
     "caption": "Pure nature, painted with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #niceview #relaxing #flower #bloom #blooming #petals #foryoupage #reelsviral\n\n\ud83c\udfb5 Music: \"Acqua\" by Ulisse via Jamendo (CC-BY-SA)",
     "fb_post_id": "122118338229283297",
