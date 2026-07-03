@@ -14912,6 +14912,129 @@
     "name": "masstiktok_muskoluk1__Even in the rain, nature finds a way t.mp4",
     "posted_at": "2026-06-19T07:39:33+00:00"
   },
+  "1stp1HVWLQprnHlgvW_XkEWR5BlA66k8n": {
+    "caption": "Where birds roam free across the nature \ud83c\udf3f \ud83d\udc26\n\n#naturebeauty #birds #relaxi #naturelovers #naturephotography #earth #wildlife #omg #viral #reelsinstagram #beautiful #birdwatching\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122118490119283297",
+    "fb_video_id": "1912401176064588",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=nOkCk7jq6Ree%2FixUvne0lQ%3D%3D%7Ch%2FpqhjA9Vk5obO16DP0%2FGA%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.389,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "birds"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting"
+        ],
+        "visual_stats": {
+          "brightness": 0.48,
+          "saturation": 0.215,
+          "warmth": 0.069
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.675,
+        "dominant_themes": [
+          "wilderness",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.362,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "bird",
+          "birdsofinstagram",
+          "birdphotography",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "nature",
+          "beauty",
+          "birds",
+          "relaxi",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#naturebeauty #birds #relaxi.mp4",
+    "posted_at": "2026-07-03T13:24:05+00:00"
+  },
   "1u72_0gb6cFjxJd6yk3zfk7pCawjyVGsB": {
     "fb_post_id": "122114116725283297",
     "fb_video_id": "1907216903315759",
