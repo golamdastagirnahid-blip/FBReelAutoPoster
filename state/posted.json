@@ -3576,6 +3576,113 @@
     "name": "masstiktok_naturebeautyscenery__#PUBGMuna #PUBGM410 #PUBGMOB.mp4",
     "posted_at": "2026-06-02T17:50:22+00:00"
   },
+  "1BY4B5fwz-Y98LeGAjfLUvhPFcEyXtuXZ": {
+    "caption": "Deep into wild nature \ud83c\udf3f\n\n#road #naturebeauty #videoba #naturelovers #naturephotography #earth #wildlife #cutebirds #adorableanimals #animals\n\n\ud83c\udfb5 Music: \"Winter Is Coming\" by Andrey Avkhimovich via Jamendo (CC-BY)",
+    "fb_post_id": "122118552585283297",
+    "fb_video_id": "1464840942062309",
+    "music_track": {
+      "artist": "Andrey Avkhimovich",
+      "attribution": "Music: \"Winter Is Coming\" by Andrey Avkhimovich via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1167648&format=mp32&from=4S5tphE7tUpHOyhEbPBdGQ%3D%3D%7C6o%2BVBJwKC6JgR1a0HRwnUg%3D%3D",
+      "bpm": null,
+      "duration": 239,
+      "id": "1167648",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.345,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "wild"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative"
+        ],
+        "visual_stats": {
+          "brightness": 0.349,
+          "saturation": 0.15,
+          "warmth": 0.109
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "world",
+        "percussion"
+      ],
+      "name": "Winter Is Coming",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "road",
+          "nature",
+          "beauty",
+          "videoba",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "peaceful",
+        "hangdrum"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#road #naturebeauty #videoba.mp4",
+    "posted_at": "2026-07-04T08:02:17+00:00"
+  },
   "1BqCkLRPacvjILpr5zbFSz0TBz6LXYpYW": {
     "caption": "Wild nature blooming with flowers \ud83c\udf3f \ud83c\udf3c\n\n#naturespring #flowers #vide #naturelovers #naturephotography #earth #wildlife #fbreels #babybirds #relaxingvideo #shorts\n\n\ud83c\udfb5 Music: \"Acqua\" by Ulisse via Jamendo (CC-BY-SA)",
     "fb_post_id": "122117209785283297",
