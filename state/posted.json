@@ -4732,6 +4732,130 @@
     "name": "masstiktok_naturebeautyscenery__happy heart day to all enjoy.mp4",
     "posted_at": "2026-06-30T06:28:11+00:00"
   },
+  "1EUrc2q-Ii4BT8yASK8GwABXzPASGvarx": {
+    "caption": "Birds of the wild nature \ud83c\udf3f \ud83d\udc26\n\n#birds #naturebeauty #videob #bird #birdsofinstagram #wildlife #birdphotography #cuteanimals #fbreels #relax #fyp #wow\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122118636633283297",
+    "fb_video_id": "1549152946718102",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=ScqjYFsn%2BLHNtvuDQ%2FfMJQ%3D%3D%7CObut6gm1%2B8q021l8ggB2JQ%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.389,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "wild",
+          "birds"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting"
+        ],
+        "visual_stats": {
+          "brightness": 0.424,
+          "saturation": 0.177,
+          "warmth": -0.018
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.675,
+        "dominant_themes": [
+          "wilderness",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.362,
+        "related_tags": [
+          "bird",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "birds",
+          "nature",
+          "beauty",
+          "videob",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#birds #naturebeauty #videob (4).mp4",
+    "posted_at": "2026-07-05T12:29:26+00:00"
+  },
   "1Ee1QLPti5o2ece1Na3vqI47tgs-Nl2ZN": {
     "caption": "Deep into wild nature \ud83c\udf3f\n\n#cflph #crossfirelegends #naturelovers #naturephotography #earth #wildlife #reelsfb #birdlover\n\n\ud83c\udfb5 Music: \"toutouig2012\" by Adragante via Jamendo (CC-BY)",
     "fb_post_id": "122117666865283297",
