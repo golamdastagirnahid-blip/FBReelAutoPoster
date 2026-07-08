@@ -3791,6 +3791,125 @@
     "name": "masstiktok_naturebeautyscenery__#PUBGMuna #PUBGM410 #PUBGMOB.mp4",
     "posted_at": "2026-06-02T17:50:22+00:00"
   },
+  "1BKLgkbhfK1WkhKdCwuUtVJ2v_C6TWJOL": {
+    "caption": "Wild nature blooming with flowers \ud83c\udf3f \ud83c\udf3c\n\n#flowers #paintings #natureb #flower #bloom #blooming #petals #relaxing #mood #nature #viral\n\n\ud83c\udfb5 Music: \"Tales of Spring\" by Martin Eigenmann via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122118862191283297",
+    "fb_video_id": "788972487638767",
+    "music_track": {
+      "artist": "Martin Eigenmann",
+      "attribution": "Music: \"Tales of Spring\" by Martin Eigenmann via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1198744&format=mp32&from=mpz0tF6ObqsylOyZFwBPwQ%3D%3D%7CG2Jkum5H9dZH%2Fiv7uYRkqg%3D%3D",
+      "bpm": null,
+      "duration": 244,
+      "id": "1198744",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.36,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "nature",
+          "scenery",
+          "nature",
+          "wild",
+          "flowers",
+          "bloom"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.486,
+          "saturation": 0.145,
+          "warmth": 0.084
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "chillout"
+      ],
+      "name": "Tales of Spring",
+      "semantic_analysis": {
+        "calmness": 0.712,
+        "dominant_themes": [
+          "wilderness",
+          "flora"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83c\udf3c"
+        ],
+        "energy": 0.325,
+        "related_tags": [
+          "flower",
+          "bloom",
+          "blooming",
+          "petals",
+          "floral",
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "flora": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "flowers",
+          "paintings",
+          "natureb",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.275
+      },
+      "speed": "medium",
+      "vartags": [
+        "lounge",
+        "happy",
+        "jazzy"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#flowers #paintings #natureb.mp4",
+    "posted_at": "2026-07-08T09:36:15+00:00"
+  },
   "1BY4B5fwz-Y98LeGAjfLUvhPFcEyXtuXZ": {
     "caption": "Deep into wild nature \ud83c\udf3f\n\n#road #naturebeauty #videoba #naturelovers #naturephotography #earth #wildlife #cutebirds #adorableanimals #animals\n\n\ud83c\udfb5 Music: \"Winter Is Coming\" by Andrey Avkhimovich via Jamendo (CC-BY)",
     "fb_post_id": "122118552585283297",
