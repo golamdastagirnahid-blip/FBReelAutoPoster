@@ -595,6 +595,122 @@
     "name": "masstiktok_naturebeautyscenery__#CFLChallenge #crossfirephil.mp4",
     "posted_at": "2026-05-23T05:35:46+00:00"
   },
+  "11HGlCtJUxdXdVqVh1yMGvhl5QqHSyWtB": {
+    "caption": "Wild nature carved by gentle waterfall \ud83c\udf3f \ud83d\udca7\n\n#waterfall #naturebeauty #naturelovers #naturephotography #earth #wildlife #feelgood #foryoupage #instadaily\n\n\ud83c\udfb5 Music: \"SLOW OF LOVE\" by PATROUX via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122118939999283297",
+    "fb_video_id": "915603744890944",
+    "music_track": {
+      "artist": "PATROUX",
+      "attribution": "Music: \"SLOW OF LOVE\" by PATROUX via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=800972&format=mp32&from=7FoOmwvypabM%2BcSXlKawCQ%3D%3D%7CswPOBjbU7RKc6ywD7bizcA%3D%3D",
+      "bpm": null,
+      "duration": 321,
+      "id": "800972",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.316,
+        "genre_tags": [
+          "ambient",
+          "chillout",
+          "peaceful",
+          "atmospheric",
+          "cinematic",
+          "instrumental"
+        ],
+        "keywords_matched": [
+          "water",
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "wild"
+        ],
+        "speed": [
+          "verylow",
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_dreamy",
+          "mood_meditative",
+          "mood_inspirational"
+        ],
+        "visual_stats": {
+          "brightness": 0.47,
+          "saturation": 0.162,
+          "warmth": -0.195
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,chillout)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "electronic",
+        "ambient",
+        "chillout",
+        "synthesizer",
+        "computer"
+      ],
+      "name": "SLOW OF LOVE",
+      "semantic_analysis": {
+        "calmness": 0.65,
+        "dominant_themes": [
+          "wilderness",
+          "water"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udca7"
+        ],
+        "energy": 0.413,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "water": 1.0,
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "waterfall",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.125
+      },
+      "speed": "medium",
+      "vartags": [
+        "meditative",
+        "neutral"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#waterfall #naturebeauty #re.mp4",
+    "posted_at": "2026-07-09T08:04:37+00:00"
+  },
   "11tJ-_uhYTMw0ioegZVU6T2KY6XmItE5L": {
     "caption": "Flowers that grow where nature stays untouched \ud83c\udf3f \ud83c\udf3c\n\n#flowers #naturebeauty #fant #flower #bloom #blooming #petals #relax #beautiful #calming #shorts #feelgood\n\n\ud83c\udfb5 Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
     "fb_post_id": "122115046425283297",
