@@ -10010,6 +10010,130 @@
     "name": "masstiktok_muskoluk1__beautiful pink  cute bird in.mp4",
     "posted_at": "2026-06-19T17:33:47+00:00"
   },
+  "1XgOFU-RyFO5-ukgAgKppMDG3evhpNTyk": {
+    "caption": "This lover birds family will melt your heart \ud83d\udc26 \ud83d\udc96\n\n#relax #birds #birdlover #nature #bird #birdsofinstagram #wildlife #birdphotography #relaxing #instadaily\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122118959361283297",
+    "fb_video_id": "1595934265467717",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=pAYblN2t4O6w9VIBTf0b9A%3D%3D%7Cq5TWAH4n%2BQL1u7LWi10e1g%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.417,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk",
+          "piano",
+          "romantic"
+        ],
+        "keywords_matched": [
+          "nature",
+          "birds",
+          "bird",
+          "bird",
+          "love",
+          "love",
+          "heart"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting",
+          "mood_romantic",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.359,
+          "saturation": 0.213,
+          "warmth": 0.159
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.6,
+        "dominant_themes": [
+          "wildlife",
+          "emotion"
+        ],
+        "emojis": [
+          "\ud83d\udc26",
+          "\ud83d\udc96"
+        ],
+        "energy": 0.417,
+        "related_tags": [
+          "bird",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography",
+          "naturelovers",
+          "naturephotography",
+          "earth"
+        ],
+        "splits": {
+          "birdlover": [
+            "bird",
+            "lover"
+          ]
+        },
+        "themes": {
+          "emotion": 1.0,
+          "wilderness": 1.0,
+          "wildlife": 2.0
+        },
+        "tokens": [
+          "relax",
+          "birds",
+          "bird",
+          "lover",
+          "nature",
+          "muskoluk",
+          "masstiktok"
+        ],
+        "warmth": 0.167
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__#relax #birds #birdlover #nature.mp4",
+    "posted_at": "2026-07-09T14:06:56+00:00"
+  },
   "1ZQ5IBOsp09-gPcI3ludLuxEM65a0wymj": {
     "fb_post_id": "122114079057283297",
     "name": "masstiktok_naturebeautyscenery__#naturebeauty #paradise #nat.mp4",
