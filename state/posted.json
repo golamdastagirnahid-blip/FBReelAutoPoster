@@ -1864,6 +1864,112 @@
     "name": "masstiktok_naturebeautyscenery__#road #naturebeauty #naturel.mp4",
     "posted_at": "2026-06-18T05:21:23+00:00"
   },
+  "14coWnboQeOIYRHEqZbagIwUZGlXZK2IQ": {
+    "caption": "Just nature. Just stillness \ud83c\udf3f\n\n#MLBB #WinWithMLBB #mlbbcrea #naturelovers #naturephotography #earth #wildlife #animalsofinstagram #satisfying #videooftheday\n\n\ud83c\udfb5 Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122119016685283297",
+    "fb_video_id": "1588010006393298",
+    "music_track": {
+      "artist": "Luke",
+      "attribution": "Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1202870&format=mp32&from=07%2FVrjzfL%2BwixQkiEW5l3Q%3D%3D%7C5Fr9WVaVjr%2BkIJhTXoZQwg%3D%3D",
+      "bpm": null,
+      "duration": 198,
+      "id": "1202870",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.345,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.33,
+          "saturation": 0.149,
+          "warmth": -0.117
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "filmscore",
+        "rock"
+      ],
+      "name": "freedom",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "mlbb",
+          "winwithmlbb",
+          "mlbbcrea",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "happy",
+        "uplifting",
+        "adventure",
+        "liberty"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#MLBB #WinWithMLBB #mlbbcrea.mp4",
+    "posted_at": "2026-07-10T05:32:27+00:00"
+  },
   "14iNxw-U0LtVmxNuwM-wJw-ARr_YBxXjL": {
     "caption": "Pure nature, nothing else needed \ud83c\udf3f\n\n#MLBB #update #relapsetime #naturelovers #naturephotography #earth #wildlife #goodvibes #reelsinstagram #wildlifephotography #reelsfb #nature\n\n\ud83c\udfb5 Music: \"Winter Is Coming\" by Andrey Avkhimovich via Jamendo (CC-BY)",
     "fb_post_id": "122117989923283297",
