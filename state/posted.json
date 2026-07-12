@@ -11078,6 +11078,114 @@
     "name": "masstiktok_naturebeautyscenery__#flowers #colorful #naturebe (1).mp4",
     "posted_at": "2026-05-31T14:59:39+00:00"
   },
+  "1a25V9a67WVwtfotzFDFPT7icV7u0-o2t": {
+    "caption": "Pure nature, nothing else needed \ud83c\udf3f\n\n#MLBB #MLBBNewMode #MLBBChao #naturelovers #naturephotography #earth #wildlife #birdfamily #wildlifephotography #asmr #foryou\n\n\ud83c\udfb5 Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122119187919283297",
+    "fb_video_id": "1041266518341575",
+    "music_track": {
+      "artist": "Luke",
+      "attribution": "Music: \"freedom\" by Luke via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1202870&format=mp32&from=yjuBkkAx06%2BJbZazjAQPrw%3D%3D%7C9AhqTEK%2BGkZH%2FtO1ZaebQA%3D%3D",
+      "bpm": null,
+      "duration": 198,
+      "id": "1202870",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.24499999999999997,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature"
+        ],
+        "speed": [
+          "low",
+          "medium",
+          "verylow"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_dark"
+        ],
+        "visual_stats": {
+          "brightness": 0.156,
+          "saturation": 0.032,
+          "warmth": 0.02
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "ambient",
+        "filmscore",
+        "rock"
+      ],
+      "name": "freedom",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography",
+          "naturebeauty"
+        ],
+        "splits": {
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "mlbb",
+          "mlbbnewmode",
+          "mlbbchao",
+          "nature",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "happy",
+        "uplifting",
+        "adventure",
+        "liberty"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#MLBB #MLBBNewMode #MLBBChao.mp4",
+    "posted_at": "2026-07-12T06:47:43+00:00"
+  },
   "1aO3JQwtJ56QYbVRMX1CGTN3a4rEOTm5U": {
     "caption": "Untouched nature \u2014 some places stay quiet \ud83c\udf3f\n\n#MLBB #WinWithMLBB #yuzhong #naturelovers #naturephotography #earth #wildlife #cutebirds #shortsfeed\n\n\ud83c\udfb5 Music: \"Evening Skies Over Eko's Black Wings\" by Andrey Avkhimovich via Jamendo (CC-BY)",
     "fb_post_id": "122116611153283297",
