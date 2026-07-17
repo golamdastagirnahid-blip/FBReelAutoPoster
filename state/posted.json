@@ -15057,6 +15057,114 @@
     "name": "masstiktok_muskoluk1__When AI paints a bird that looks THIS .mp4",
     "posted_at": "2026-07-07T17:48:02+00:00"
   },
+  "1iUeFVaZ0EsYN5k7L5UmrnD64A7sc8uf-": {
+    "caption": "Bird of the wild beautiful \ud83c\udf3f \ud83d\udc26\n\n#birds #birdsofinstagram #wildlife #birdphotography #cutebirds #viralreels #adorableanimals #birdwatching #love #cuteanimals\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+    "fb_post_id": "122119644459283297",
+    "fb_video_id": "1698885811829302",
+    "music_track": {
+      "artist": "Ivan Tregub (BER)",
+      "attribution": "Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1465419&format=mp32&from=XN8TGHuvzy6CTMexlG9qeg%3D%3D%7CkAI5ERLPpW01jBGGG9Pz%2Bg%3D%3D",
+      "bpm": null,
+      "duration": 368,
+      "id": "1465419",
+      "license": "CC-BY",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "match_profile": {
+        "energy": 0.4,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "light",
+          "gentle",
+          "folk"
+        ],
+        "keywords_matched": [
+          "wild",
+          "bird"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_uplifting",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.338,
+          "saturation": 0.151,
+          "warmth": -0.199
+        }
+      },
+      "match_reasons": [
+        "genres+2(ambient,folk)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 13.0,
+      "musicinfo_tags": [
+        "filmscore",
+        "folk",
+        "ambient",
+        "horn"
+      ],
+      "name": "Thunder God",
+      "semantic_analysis": {
+        "calmness": 0.625,
+        "dominant_themes": [
+          "wilderness",
+          "wildlife"
+        ],
+        "emojis": [
+          "\ud83c\udf3f",
+          "\ud83d\udc26"
+        ],
+        "energy": 0.4,
+        "related_tags": [
+          "birds",
+          "birdsofinstagram",
+          "wildlife",
+          "birdphotography"
+        ],
+        "splits": {},
+        "themes": {
+          "wilderness": 1.0,
+          "wildlife": 1.0
+        },
+        "tokens": [
+          "muskoluk",
+          "beautiful",
+          "bird",
+          "protect",
+          "babies",
+          "from",
+          "masstiktok",
+          "her"
+        ],
+        "warmth": 0.25
+      },
+      "speed": "medium",
+      "vartags": [
+        "acoustic",
+        "energetic",
+        "instrumental",
+        "neutral",
+        "thundering"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_muskoluk1__beautiful bird protect her babies from.mp4",
+    "posted_at": "2026-07-17T11:06:57+00:00"
+  },
   "1iiC9XTfL5BtpAFVTCqfMEH6Z3BFSSPU4": {
     "caption": "Flowers that grow where nature stays untouched \ud83c\udf3f \ud83c\udf3c\n\n#flowers #niceview #amazing #flower #bloom #blooming #petals #cutebirds #trending #nature\n\n\ud83c\udfb5 Music: \"Storm\" by A.K.1974 via Jamendo (CC-BY-SA)",
     "fb_post_id": "122118773163283297",
