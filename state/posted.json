@@ -8948,6 +8948,123 @@
     "name": "masstiktok_muskoluk1__This stunning bird looks like royalty .mp4",
     "posted_at": "2026-07-12T14:19:44+00:00"
   },
+  "1O_-VazOL1ow1igzbaeuDmQc3CUipOEMg": {
+    "caption": "Deep into wild nature \ud83c\udf3f\n\n#naturespring #naturebeauty #naturelovers #naturephotography #earth #wildlife #relaxing #vibes #positivevibes #facebookreels #reelsfb\n\n\ud83c\udfb5 Music: \"ti techesh\" by Loufo via Jamendo (CC-BY-SA)",
+    "fb_post_id": "122119712139283297",
+    "fb_video_id": "1913973582603345",
+    "music_track": {
+      "artist": "Loufo",
+      "attribution": "Music: \"ti techesh\" by Loufo via Jamendo (CC-BY-SA)",
+      "audio_url": "https://prod-1.storage.jamendo.com/?trackid=1434709&format=mp32&from=XVUN1uxu%2BJBPPwoGh3Jccg%3D%3D%7C4Tv8PyEe8Rs%2F61D5fLIGnQ%3D%3D",
+      "bpm": null,
+      "duration": 229,
+      "id": "1434709",
+      "license": "CC-BY-SA",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "match_profile": {
+        "energy": 0.362,
+        "genre_tags": [
+          "ambient",
+          "cinematic",
+          "instrumental",
+          "peaceful",
+          "acoustic",
+          "piano"
+        ],
+        "keywords_matched": [
+          "nature",
+          "scenery",
+          "nature",
+          "nature",
+          "nature",
+          "wild",
+          "spring",
+          "spring"
+        ],
+        "speed": [
+          "low",
+          "medium"
+        ],
+        "vartags": [
+          "mood_relaxing",
+          "mood_inspirational",
+          "mood_meditative",
+          "mood_happy",
+          "mood_dreamy"
+        ],
+        "visual_stats": {
+          "brightness": 0.325,
+          "saturation": 0.124,
+          "warmth": 0.105
+        }
+      },
+      "match_reasons": [
+        "genres+1(ambient)",
+        "speed=medium",
+        "instrumental",
+        "dur>=video"
+      ],
+      "match_score": 11.0,
+      "musicinfo_tags": [
+        "chillout",
+        "ambient"
+      ],
+      "name": "ti techesh",
+      "semantic_analysis": {
+        "calmness": 0.717,
+        "dominant_themes": [
+          "wilderness"
+        ],
+        "emojis": [
+          "\ud83c\udf3f"
+        ],
+        "energy": 0.333,
+        "related_tags": [
+          "naturelovers",
+          "naturephotography",
+          "earth",
+          "wildlife",
+          "sceneryview",
+          "landscapephotography"
+        ],
+        "splits": {
+          "naturebeauty": [
+            "nature",
+            "beauty"
+          ],
+          "naturebeautyscenery": [
+            "nature",
+            "beauty",
+            "scenery"
+          ],
+          "naturespring": [
+            "nature",
+            "spring"
+          ]
+        },
+        "themes": {
+          "wilderness": 3.0
+        },
+        "tokens": [
+          "nature",
+          "spring",
+          "beauty",
+          "scenery",
+          "masstiktok"
+        ],
+        "warmth": 0.2
+      },
+      "speed": "medium",
+      "vartags": [
+        "happy",
+        "space",
+        "cloudrap"
+      ],
+      "vocal_instrumental": "instrumental"
+    },
+    "name": "masstiktok_naturebeautyscenery__#naturespring #naturebeauty .mp4",
+    "posted_at": "2026-07-18T05:49:24+00:00"
+  },
   "1OxgXTu-1hZuRzJ40BAJOP8Vl9XDqwnoQ": {
     "caption": "Where birds roam free across the nature \ud83d\udc26 \ud83c\udf3f\n\n#relax #birds #nature #birdlover #bird #birdsofinstagram #wildlife #birdphotography #fypviral\n\n\ud83c\udfb5 Music: \"Thunder God\" by Ivan Tregub (BER) via Jamendo (CC-BY)",
     "fb_post_id": "122116859739283297",
