@@ -1,7 +1,7 @@
 # Reel Health Report
 
-Generated: 2026-07-21T06:05:18+00:00
-Total checked: 19
+Generated: 2026-07-22T06:03:58+00:00
+Total checked: 16
 
 | Posted (UTC) | Status | Video ID | File name | Issues | Permalink |
 |---|---|---|---|---|---|
@@ -21,6 +21,3 @@ Total checked: 19
 | 2026-07-16T07:13:50+00:00 | **ERROR** | `1571527014427898` | masstiktok_naturebeautyscenery__Download Boo app #booapp #da… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-07-15T14:22:18+00:00 | **ERROR** | `1374929994491146` | masstiktok_naturebeautyscenery__happy Valentine's Day every … | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-07-15T06:42:20+00:00 | **ERROR** | `2828495964177297` | masstiktok_naturebeautyscenery__#birds #flowers #naturebeaut… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
-| 2026-07-15T04:20:12+00:00 | **ERROR** | `1716854786121061` | masstiktok_naturebeautyscenery__#naturebeauty #naturelover #… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
-| 2026-07-14T14:25:13+00:00 | **ERROR** | `2104340620427445` | masstiktok_muskoluk1__#slowmotion #relax #birds #viral.mp4 | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
-| 2026-07-14T09:00:19+00:00 | **ERROR** | `1495366165605102` | masstiktok_naturebeautyscenery__#moon #flowers #videobackgro… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
