@@ -1,7 +1,7 @@
 # Reel Health Report
 
-Generated: 2026-07-22T06:03:58+00:00
-Total checked: 16
+Generated: 2026-07-23T06:09:34+00:00
+Total checked: 14
 
 | Posted (UTC) | Status | Video ID | File name | Issues | Permalink |
 |---|---|---|---|---|---|
@@ -19,5 +19,3 @@ Total checked: 16
 | 2026-07-16T16:56:19+00:00 | **ERROR** | `1445787404249233` | masstiktok_naturebeautyscenery__#naturebeauty #naturelover #… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-07-16T11:29:54+00:00 | **ERROR** | `1896554527691919` | masstiktok_naturebeautyscenery__#flowers #rain #naturebeauty… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
 | 2026-07-16T07:13:50+00:00 | **ERROR** | `1571527014427898` | masstiktok_naturebeautyscenery__Download Boo app #booapp #da… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
-| 2026-07-15T14:22:18+00:00 | **ERROR** | `1374929994491146` | masstiktok_naturebeautyscenery__happy Valentine's Day every … | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
-| 2026-07-15T06:42:20+00:00 | **ERROR** | `2828495964177297` | masstiktok_naturebeautyscenery__#birds #flowers #naturebeaut… | HTTP 400: {"error":{"message":"(#100) The page is not qualified to use Video Copyright API. Please verify that the page has completed Video Copyright API onboarding process.","type":"OAuthException","code":100, | — |
